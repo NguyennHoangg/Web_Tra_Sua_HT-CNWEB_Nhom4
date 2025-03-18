@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <title>5FriendTea</title>
+    <style>
+        .carousel-item img {
+            width: 100%;
+            object-fit: cover; 
+        }
+        .divider {
+            margin: 0 10px;
+            color: black; 
+        }
+        .promo-card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .promo-card:hover {
+            transform: scale(1.05);
+            animation: shake 0.3s ease-in-out;
+        }
+        li{
+            margin-top: 10px;
+        }
+        .navbar {
+        background-color: rgb(225, 136, 64) !important;
+        padding: 15px 0;
+        }
+        .nav-link {
+            color: white !important;
+            transition: all 0.3s ease-in-out;
+            font-size: 16px;
+        }
+        .nav-link:hover, .nav-item .active {
+            color: #ffdd99 !important;
+            font-weight: bold;
+        }
+        .navbar-toggler {
+            color: white;
+        }
+
+        #khuyenmai a:hover{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg shadow-sm" id="trangchu">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img class="rounded-circle me-2" style="width: 60px;" src="../IMAGE/logo_img.jpg" alt="5FriendTea Logo">
+                    <span class="fw-bold text-white fs-4">5FriendTea</span>
+                </a>
+        
+                <!-- Nút toggle cho mobile -->
+                <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+        
+                <!-- Menu -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav fw-semibold text-uppercase" style="gap: 20px;">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active text-warning">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sản Phẩm</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="trasua.html">Trà Sữa</a></li>
+                                <li><a class="dropdown-item" href="tra.html">Trà</a></li>
+                                <li><a class="dropdown-item" href="thucuongkhac.html">Thức uống khác</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="khuyenmai.html" class="nav-link">Khuyến Mãi</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="#footer" class="nav-link">Liên Hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="cauhoi.html" class="nav-link">Câu Hỏi</a>
+                        </li>
+                    </ul>
+                </div>
+        
+                
+            </div>
+        </nav>
+    <div class="container mb-5" id="khuyenmai">
+        <img src="../IMAGE/poster_giamgia2.png" class="img-fluid" alt="...">
+        <div style="margin-top: 30px;">
+            <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="#trangchu">Trang chủ</a>
+            <span class="divider"> / </span>
+            <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="khuyenmai.html">Khuyến mãi</a>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card promo-card">
+                        <img src="../IMAGE/poster_giamgia1.png" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Tri Ân Hội Viên Lâu Năm</h5>
+                            <p class="card-text">Tặng miễn phí dùng thử món mới.</p>
+                            <a href="khuyenmai.html" class="btn btn-custom">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card promo-card">
+                        <img src="../IMAGE/poster_giamgia2.png" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Combo Trà Sữa + Bánh</h5>
+                            <p class="card-text">Chỉ 89K cho 2 ly Ô Long Sữa & 1 bánh bông lan.</p>
+                            <a href="khuyenmai.html" class="btn btn-custom">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card promo-card">
+                        <img src="../IMAGE/poster_giamgia4.png" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Tặng Quà Đặc Biệt</h5>
+                            <p class="card-text">Mua hóa đơn trên 100K nhận quà tặng hấp dẫn.</p>
+                            <a href="khuyenmai.html" class="btn btn-custom">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <div class="text-start">
+                        <h3>Thức Uống Bán Chạy</h3>
+                    </div>
+                    <hr>
+                    <div class="col-md-4" >
+                        <div class="card promo-card">
+                           
+                                <img src="../IMAGE/trasua_dau.jpg" class="img rounded-circle" style="width: 100%;" alt="">
+                          
+                            
+                                <div class="card-header text-center fs-4 fw-bold">Trà sữa trân châu hạ long</div>
+                            
+                          
+                                <button class="btn btn-warning ">Mua ngay</button>
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" style="background-color: rgb(225, 136, 64); padding: 20px 0; color: white;">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <img class="rounded-circle" style="width: 300px;" src="../IMAGE/logo_img.jpg" alt="5FriendTea Logo">
+                </div>
+                <div class="col-md-4">
+                    <h5 class="md-3">LIÊN KẾT NHANH</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../HTML/index.html" class="nav-link text-white">Trang Chủ</a></li>
+                        <li><a href="#" class="nav-link text-white">Giới Thiệu</a></li>
+                        <li><a href="#" class="nav-link text-white">Sản Phẩm</a></li>
+                        <li><a href="../HTML/index2.html" class="nav-link text-white">Khuyến Mãi</a></li>
+                        <li><a href="#" class="nav-link text-white">Chính Sách</a></li>
+                        <li><a href="#" class="nav-link text-white">Liên Hệ</a></li>
+                        <li><a href="#" class="nav-link text-white">Câu Hỏi</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="md-3">THÔNG TIN LIÊN HỆ</h5>
+                    <p>Địa chỉ: 242 Nguyễn Oanh, Gò Vấp, TP. Hồ Chí Minh</p>
+                    <p>Hotline: 1990 0091</p>
+                    <p>Email: 5friendstea@gmail.com.vn</p>
+                    <p>Theo dõi chúng tôi:</p>
+                    <div>
+                        <a href="https://facebook.com" class="text-white me-3" target="_blank">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                        <a href="https://instagram.com" class="text-white" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div style="background-color: brown; color: white; text-align: center; padding: 10px 0;">
+        <p class="mb-0 align-items-center">
+            &copy; 2025 5FriendTea. All rights reserved.
+        </p>
+    </div>
+    
+
+    
+    
+    <!-- Bootstrap Script -->
+    <script src="../javascript/bootstrap.bundle.min.js"></script>
+</body>
+</html>

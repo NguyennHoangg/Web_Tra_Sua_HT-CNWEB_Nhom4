@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <title>5FriendTea</title>
+    <style>
+        .carousel-item img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .divider {
+            margin: 0 10px;
+            color: black;
+        }
+
+        .promo-card {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .promo-card:hover {
+            transform: scale(1.05);
+            animation: shake 0.3s ease-in-out;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+
+        .navbar {
+            background-color: rgb(225, 136, 64) !important;
+            padding: 15px 0;
+        }
+
+        .nav-link {
+            color: white !important;
+            transition: all 0.3s ease-in-out;
+            font-size: 16px;
+        }
+
+        .nav-link:hover,
+        .nav-item .active {
+            color: #ffdd99 !important;
+            font-weight: bold;
+        }
+
+        .navbar-toggler {
+            color: white;
+        }
+
+        .nav-item dropdown :hover {
+
+            color: #ffdd99;
+        }
+
+        body {
+            background-color: rgb(248, 223, 227);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img class="rounded-circle me-2" style="width: 60px;" src="../IMAGE/logo_img.jpg" alt="5FriendTea Logo">
+                <span class="fw-bold text-white fs-4">5FriendTea</span>
+            </a>
+
+            <!-- Nút toggle cho mobile -->
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav fw-semibold text-uppercase" style="gap: 20px;">
+                    <li class="nav-item">
+                        <a href="trangchu.html" class="nav-link ">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sản
+                            Phẩm</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="trasua.html">Trà Sữa</a></li>
+                            <li><a class="dropdown-item" href="tra.html">Trà</a></li>
+                            <li><a class="dropdown-item" href="thucuongkhac.html">Thức uống khác</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="khuyenmai.html" class="nav-link active text-warning">Khuyến Mãi</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#footer" class="nav-link">Liên Hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cauhoi.html" class="nav-link">Câu Hỏi</a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row align-items-center gx-5 mt-5">
+            <div class="col-md-6 text-center order-md-1 order-2">
+                <img src="../IMAGE/poster_giamgia1.png" class="img-fluid rounded shadow" alt="Khuyến mãi đặc biệt">
+            </div>
+            <div class="col-md-6 order-md-2 order-1">
+                <h3 class="text-uppercase fw-bold">Tri Ân Khách Hàng Lâu Năm</h3>
+                <hr>
+                <p class="lead">Chúng tôi xin gửi lời cảm ơn chân thành đến quý khách hàng đã đồng hành cùng 5FriendTea
+                    trong suốt thời gian qua. Cửa hàng chúng tôi xin gửi đến quý khách hàng dùng thử món mới Miễn Phí
+                </p>
+                <ul>
+                    <li>Trà Olong Xoài</li>
+                    <li>Trà Olong kem Chesse</li>
+                    <li>Cà Phê muối</li>
+                    <li>Trà trái cây nhiệt đới</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row align-items-center mt-5 gx-5 mb-5">
+            <div class="col-md-6 order-md-1 order-2">
+                <h3 class="text-uppercase fw-bold">Giảm giá tối đa 50% cho combo Trà Sữa + Bánh cùng nhiều Combo khác
+                </h3>
+                <p>Thời gian diễn ra khuyến mãi từ: 17/03/2025 - 30/03/2025</p>
+                <hr>
+                <p class="lead">Chương trình chỉ áp dụng cho một số combo đặc biệt vaf trong thời gian diễn ra chương
+                    trình khuyến mãi
+                </p>
+                <ul>
+                    <li>Combo 2 Olong sữa + Bánh Bông Lan Trứng Muối gias chir <strong>89k</strong></li>
+                    <li>Combo trà sữa vị 4 mùa giá chỉ <strong>89k</strong></li>
+                    <li>Comba mua theo nhóm giảm giá <strong>30%</strong></li>
+                    <li>Trà trái cây nhiệt đới</li>
+                </ul>
+            </div>
+            <div class="col-md-6 text-center order-md-2 order-1">
+                <img src="../IMAGE/poster_giamgia2.png" class="img-fluid rounded shadow" alt="Khuyến mãi đặc biệt">
+            </div>
+        </div>
+
+        <div class="row align-items-center gx-5 mt-5 mb-5">
+            <div class="col-md-6 text-center order-md-1 order-2">
+                <img src="../IMAGE/poster_giamgia3.jpg" class="img-fluid rounded shadow" alt="Khuyến mãi đặc biệt">
+            </div>
+            <div class="col-md-6 order-md-2 order-1">
+                <h3 class="text-uppercase fw-bold">Giới Thiệu Sản Phẩm Mới - Dòng Đồ Uống Bơ Độc Đáo! 🥑✨</h3>
+                <h3>💚 Ưu đãi đặc biệt: Giảm ngay 10% khi mua từ 2 ly trở lên!</h3>
+                <hr>
+                <p class="lead">
+                    🌟 5FriendTea tự hào giới thiệu bộ ba đồ uống mới với nguyên liệu chính từ bơ tươi nguyên chất, mang
+                    đến hương vị béo ngậy, thơm ngon và cực kỳ bổ dưỡng.
+                </p>
+                <ul>
+                    <div class="mb-3">
+                        <strong>&#129361; BƠ HẠT NHÀI - 49.000đ</strong> <!-- 🥑 -->
+                        <li>&#9989; Sinh tố bơ sánh mịn kết hợp với trân châu và các loại hạt nhai giòn giòn.</li> <!-- ✅ -->
+                        <li>&#9989; Vừa thơm ngon, vừa kích thích vị giác với sự hòa quyện giữa béo và giòn.</li>
+                    </div>
+                
+                    <div class="mb-3">
+                        <strong>&#129361; BƠ CÔ NỐT - 55.000đ</strong> <!-- 🥑 -->
+                        <li>&#9989; Kết hợp giữa sinh tố bơ tươi, kem tươi béo ngậy và topping dừa sấy giòn.</li>
+                        <li>&#9989; Sự kết hợp hoàn hảo giữa béo, ngọt, bùi, tạo nên thức uống cực hấp dẫn.</li>
+                    </div>
+                
+                    <div class="mb-3">
+                        <strong>&#9749; BƠ ESPRESSO - 49.000đ</strong> <!-- ☕ -->
+                        <li>&#9989; Độc đáo với sự hòa quyện giữa vị béo ngậy của bơ và vị đắng nhẹ của cà phê espresso.</li>
+                        <li>&#9989; Một lựa chọn lý tưởng cho những tín đồ yêu thích cà phê và hương vị mới lạ.</li>
+                    </div>
+                </ul>
+                
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div id="footer" style="background-color: rgb(225, 136, 64); padding: 20px 0; color: white;">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <img class="rounded-circle" style="width: 300px;" src="../IMAGE/logo_img.jpg" alt="5FriendTea Logo">
+                </div>
+                <div class="col-md-4">
+                    <h5 class="md-3">LIÊN KẾT NHANH</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../HTML/index.html" class="nav-link text-white">Trang Chủ</a></li>
+                        <li><a href="gioithieu.html" class="nav-link text-white">Giới Thiệu</a></li>
+                        <li><a href="#" class="nav-link text-white">Sản Phẩm</a></li>
+                        <li><a href="khuyenmai.html" class="nav-link text-white">Khuyến Mãi</a></li>
+                        <li><a href="#footer" class="nav-link text-white">Liên Hệ</a></li>
+                        <li><a href="cauhoi.html" class="nav-link text-white">Câu Hỏi</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="md-3">THÔNG TIN LIÊN HỆ</h5>
+                    <p>Địa chỉ: 242 Nguyễn Oanh, Gò Vấp, TP. Hồ Chí Minh</p>
+                    <p>Hotline: 1990 0091</p>
+                    <p>Email: 5friendstea@gmail.com.vn</p>
+                    <p>Theo dõi chúng tôi:</p>
+                    <div>
+                        <a href="https://facebook.com" class="text-white me-3" target="_blank">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                        <a href="https://instagram.com" class="text-white" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div style="background-color: brown; color: white; text-align: center; padding: 10px 0;">
+        <p class="mb-0 align-items-center">
+            &copy; 2025 5FriendTea. All rights reserved.
+        </p>
+    </div>
+
+
+
+
+    <!-- Bootstrap Script -->
+    <script src="../javascript/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
