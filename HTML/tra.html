@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap-icons.css">
+
+    <title>5FriendTea</title>
+    <style>
+        #fdf3eb body {
+            background-color: #fdf3eb;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .divider {
+            margin: 0 10px;
+            color: black;
+        }
+
+        .promo-card {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .promo-card:hover {
+            transform: scale(1.05);
+            animation: shake 0.3s ease-in-out;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+
+        .navbar {
+            background-color: rgb(225, 136, 64) !important;
+            padding: 15px 0;
+        }
+
+        .nav-link {
+            color: white !important;
+            transition: all 0.3s ease-in-out;
+            font-size: 16px;
+        }
+
+        .nav-link:hover,
+        .nav-item .active {
+            color: #ffdd99 !important;
+            font-weight: bold;
+        }
+
+        .navbar-toggler {
+            color: white;
+        }
+
+        #khuyenmai a:hover {
+            color: blue;
+        }
+
+        body {
+            background-color: rgb(249, 236, 238);
+        }
+
+        .image-container {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .custom-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+        }
+
+        #header-sanpham_Tra,  #header-sanpham_TraSua, #header-sanpham_TraTraiCay, #header-sanpham_khac{
+            background-color: rgb(116, 138, 138);
+        }
+
+        .drink-card {
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .drink-card img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .drink-card:hover img {
+            transform: scale(1.1);
+        }
+
+       
+    .drink-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #b22222;
+        margin-top: 10px;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    /* CSS cho nút thêm vào giỏ hàng - hoàn toàn ẩn ban đầu */
+    .add-to-cart {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgb(225, 136, 64);
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        cursor: pointer;
+        z-index: 10;
+    }
+    
+    /* Hiển thị nút và ẩn tên sản phẩm khi hover vào card */
+    .drink-card:hover .add-to-cart {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .drink-card:hover .drink-title {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .add-to-cart:hover {
+        background-color: #b22222;
+    }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg shadow-sm" id="trangchu">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img class="rounded-circle me-2" style="width: 60px;" src="../IMAGE/logo_img.jpg" alt="5FriendTea Logo">
+                <span class="fw-bold text-white fs-4">5FriendTea</span>
+            </a>
+
+            <!-- Nút toggle cho mobile -->
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav fw-semibold text-uppercase" style="gap: 20px;">
+                    <li class="nav-item">
+                        <a href="trangchu.html" class="nav-link ">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active text-warning" href="#" role="button" data-bs-toggle="dropdown">Sản
+                            Phẩm</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#header-sanpham_TraSua">Trà Sữa</a></li>
+                            <li><a class="dropdown-item" href="#header-sanpham_Tra">Trà</a></li>
+                            <li><a class="dropdown-item" href="#header-sanpham_khac">Thức uống khác</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="khuyenmai.html" class="nav-link">Khuyến Mãi</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#footer" class="nav-link">Liên Hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cauhoi.html" class="nav-link">Câu Hỏi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid">
+        <img src="../IMAGE/poster_sanpham.jpg" class="img-fluid mt-1 " alt="">
+    </div>
+
+    <div>
+        <div class="container text-center m-auto mt-2" id="header-sanpham_TraTraiCay">
+            <h2 class="fw-bolder">Trà Trái Cây</h2>
+        </div>
+    
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-sm-6 p-3">
+                    <div class="drink-card">
+                        <img src="../IMAGE/ALISAN-TRÁI-CÂY.png" alt="Trà Alisan Trái Cây">
+                        <div class="drink-title">Trà Alisan Trái Cây</div>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 p-3">
+                    <div class="drink-card">
+                        <img src="../IMAGE/Chanh-Aiyu-trân-châu-trắng-2.png" alt="Chanh Ai-yu và Trân Châu Trắng">
+                        <div class="drink-title">Chanh Ai-yu và Trân Châu Trắng</div>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 p-3">
+                    <div class="drink-card">
+                        <img src="../IMAGE/Đào-hồng-mận-hột-é-1.png" alt="Đào Hồng Mận Hạt É">
+                        <div class="drink-title">Đào Hồng Mận Hạt É</div>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+    
+                <div class="col-md-4 col-sm-6 p-3">
+                    <div class="drink-card">
+                        <img src="../IMAGE/Xanh-đào-2.png" alt="Xanh Đào">
+                        <div class="drink-title">Xanh Đào</div>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+    
+                <div class="col-md-4 col-sm-6 p-3">
+                    <div class="drink-card">
+                        <img src="../IMAGE/Đen-đào-2.png" alt="Đen Đào">
+                        <div class="drink-title">Đen Đào</div>
+                        <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center m-auto mt-2" id="header-sanpham_TraSua">
+        <h2 class="fw-bolder">Trà Sữa</h2>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Tra-Sua-Dao.png" alt="Trà Sữa Đào">
+                    <div class="drink-title">Trà Sữa Đào</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Tra-sua-Earl-Grey-Carvia_web.png" alt="Trà Sữa Earl Grey Carvia">
+                    <div class="drink-title">Trà Sữa Earl Grey Carvia</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Tra-sua-Matcha.png" alt="Trà sữa matcha">
+                    <div class="drink-title">Trà sữa matcha</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Tra-Sua-Xoai.png" alt="Trà Sữa Xoài">
+                    <div class="drink-title">Trà Sữa Xoài</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Strawberry-Oreo-Smoothie.png" alt="Strawberry Oreo Smoothie ">
+                    <div class="drink-title">Strawberry Oreo Smoothie</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/STAWBERRY-8.png" alt="Strawberry White Choco">
+                    <div class="drink-title">Strawberry White Choco</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/OKINAWA-8.png" alt="Matcha Okinawa ">
+                    <div class="drink-title">Matcha Okinawa</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Hinh-Web-OKINAWA-LATTE.png" alt="Okinawa Latte ">
+                    <div class="drink-title">Okinawa Latte</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Hinh-Web-OKINAWA-SUA-TUOI.png" alt="Okinawa Sữa Tươi ">
+                    <div class="drink-title">Okinawa sữa tươi</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Hinh-Web-OKINAWA-TRÀ-SỮA.png" alt="Okinawa Trà Sữa ">
+                    <div class="drink-title">Okinawa Trà Sữa</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center m-auto mt-2" id="header-sanpham_Tra">
+        <h2 class="fw-bolder">Trà</h2>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Tra-Xanh-Dao.png" alt="Trà Xanh Đào">
+                    <div class="drink-title">Trà Xanh Đào</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Trà-Bí-Đao-2.png" alt="Trà Bí Đao ">
+                    <div class="drink-title">Trà Bí Đao </div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Trà-Xanh-2.png" alt="Trà Xanh">
+                    <div class="drink-title">Trà Xanh</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Trà-Bí-Đao-Milkfoam-2.png" alt="Trà Bí Đao MilkFoam">
+                    <div class="drink-title">Trà Bí Đao MilkFoam</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Trà-Đen-2.png" alt="Trà Đen ">
+                    <div class="drink-title">Trà Đen</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Trà-Đen-Milkfoam-2.png" alt="Trà Đen MilkFoam ">
+                    <div class="drink-title">Trà Đen MilkFoam</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Trà-Oolong-2.png" alt="Trà Olong ">
+                    <div class="drink-title">Trà Olong </div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Trà-Oolong-Milkfoam-3.png" alt="Trà Olong MilkFoam">
+                    <div class="drink-title">Trà Olong MilkFoam</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container text-center m-auto mt-2" id="header-sanpham_khac">
+        <h2 class="fw-bolder">Thức Uống Khác</h2>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/kem-tc.png" alt="Kem">
+                    <div class="drink-title">Kem Trân Châu Đen</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/kem.png" alt="Kem  ">
+                    <div class="drink-title">Kem</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Khoai-môn-đá-xay-2.png" alt="Khoai Môn Đá Xay">
+                    <div class="drink-title">Khoai Môn Đá Xay</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/TS-BAP.png" alt="Xanh Sữa Bắp Ngọt Lá Nếp">
+                    <div class="drink-title">Xanh Sữa Bắp Ngọt Lá Nếp</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/TRA-XANH-BAP.png" alt="Trà Xanh Kem Bắp Lá Nếp">
+                    <div class="drink-title">Trà Xanh Kem Bắp Lá Nếp</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/Yakult-Dao-Da-Xay.png" alt="Yakult Đào Đá Xay">
+                    <div class="drink-title">Yakult Đào Đá Xay</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="drink-card">
+                    <img src="../IMAGE/MATCHA-BAP.png" alt="Matcha Bắp">
+                    <div class="drink-title">Matcha Bắp</div>
+                    <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer" style="background-color: rgb(225, 136, 64); padding: 20px 0; color: white;">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <img class="rounded-circle" style="width: 300px;" src="../IMAGE/logo_img.jpg" alt="5FriendTea Logo">
+                </div>
+                <div class="col-md-4">
+                    <h5 class="md-3">LIÊN KẾT NHANH</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../HTML/index.html" class="nav-link text-white">Trang Chủ</a></li>
+                        <li><a href="#" class="nav-link text-white">Giới Thiệu</a></li>
+                        <li><a href="#" class="nav-link text-white">Sản Phẩm</a></li>
+                        <li><a href="../HTML/index2.html" class="nav-link text-white">Khuyến Mãi</a></li>
+                        <li><a href="#" class="nav-link text-white">Chính Sách</a></li>
+                        <li><a href="#" class="nav-link text-white">Liên Hệ</a></li>
+                        <li><a href="#" class="nav-link text-white">Câu Hỏi</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="md-3">THÔNG TIN LIÊN HỆ</h5>
+                    <p>Địa chỉ: 242 Nguyễn Oanh, Gò Vấp, TP. Hồ Chí Minh</p>
+                    <p>Hotline: 1990 0091</p>
+                    <p>Email: 5friendstea@gmail.com.vn</p>
+                    <p>Theo dõi chúng tôi:</p>
+                    <div>
+                        <a href="https://facebook.com" class="text-white me-3" target="_blank">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                        <a href="https://instagram.com" class="text-white" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="background-color: brown; color: white; text-align: center; padding: 10px 0;">
+        <p class="mb-0 align-items-center">
+            &copy; 2025 5FriendTea. All rights reserved.
+        </p>
+    </div>
+
+    <!-- Bootstrap Script -->
+    <script src="../javascript/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>
