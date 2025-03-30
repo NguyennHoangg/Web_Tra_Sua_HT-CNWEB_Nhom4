@@ -34,20 +34,19 @@
         }
 
         .navbar {
-            background-color: rgb(225, 136, 64) !important;
+            background-color: white;
             padding: 15px 0;
         }
 
         .nav-link {
-            color: white !important;
+            color:black;
             transition: all 0.3s ease-in-out;
             font-size: 16px;
         }
 
         .nav-link:hover,
         .nav-item .active {
-            color: #ffdd99 !important;
-            font-weight: bold;
+           text-decoration: underline;
         }
 
         .navbar-toggler {
@@ -77,6 +76,53 @@
             object-fit: cover;
             transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
         }
+
+        .auth-tab {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            padding-bottom: 5px;
+            position: relative;
+        }
+
+        .auth-tab.active {
+            color: #ff6600;
+        }
+
+        .auth-tab.active::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #ff6600;
+        }
+
+        .btn-orange {
+            background-color: #ff6600;
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+
+        .btn-orange:hover {
+            background-color: #e65c00;
+        }
+
+        #login-tab {
+            text-decoration: none;
+        }
+
+        #register-tab {
+            text-decoration: none;
+        }
+
+        #checkbox-m input {
+            accent-color: blue;
+        }
     </style>
 
 
@@ -89,7 +135,7 @@
             <!-- Logo -->
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img class="rounded-circle me-2" style="width: 60px;" src="IMAGE/logo_img.jpg" alt="5FriendTea Logo">
-                <span class="fw-bold text-white fs-4">5FriendTea</span>
+                <span class="fw-bold text-black fs-4">5FriendTea</span>
             </a>
 
             <!-- Nút toggle cho mobile -->
@@ -102,7 +148,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav fw-semibold text-uppercase" style="gap: 20px;">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active text-warning">Trang Chủ</a>
+                        <a href="#" class="nav-link">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
                         <a href="HTML/gioithieu.html" class="nav-link">Giới Thiệu</a>
@@ -124,6 +170,17 @@
                     <li class="nav-item">
                         <a href="#footer" class="nav-link">Liên Hệ</a>
                     </li>
+
+                    <li class="nav-item" style="padding-bottom: 10px;">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal"><i class="bi bi-envelope fs-4" style="padding-left: 80px;"></i></a>
+                    </li>
+
+
+                    <li class="nav-item" style="padding-bottom: 10px;">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
+                            <i class="bi bi-person-circle fs-4"></i>
+                        </a>
+                    </li>
                     
                 </ul>
             </div>
@@ -131,6 +188,112 @@
 
         </div>
     </nav>
+
+    <!-- Modal Đăng Nhập / Đăng Ký -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+                <button type="button" class="btn-close position-absolute end-0 me-3 mt-2" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+
+                <!-- Tabs -->
+                <ul class="nav nav-tabs border-bottom pb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">ĐĂNG NHẬP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register">ĐĂNG KÝ</a>
+                    </li>
+                </ul>
+
+
+                <div class="tab-content mt-3">
+                    <!-- Form Đăng Nhập -->
+                    <div class="tab-pane fade show active" id="login">
+                        <form>
+                            <p class="mt-3 text-muted">Vui lòng đăng nhập trước khi mua vé để tích lũy điểm, cơ hội nhận
+                                thêm nhiều
+                                ưu đãi từ chương trình thành viên 5FRIENDSTEA.</p>
+                            <div class="mb-3">
+                                <input type="email" class="form-control rounded-2" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control rounded-2" placeholder="Mật khẩu" required>
+                            </div>
+                            <div class="mb-3">
+                                <a href="#" class="text-decoration-none text-muted">Quên mật khẩu?</a>
+                            </div>
+                            <button type="submit" class="btn btn-orange w-100 py-2">ĐĂNG NHẬP</button>
+                        </form>
+                    </div>
+
+                    <!-- Form Đăng Ký -->
+                    <div class="tab-pane fade" id="register">
+                        <form>
+                            <p class="mt-3 text-muted">Vui lòng đăng kí để hưởng nhiều ưu đãi độc quyền từ 5FRIENDSTEA</p>
+                            <div class="mb-3">
+                                <input type="text" class="form-control rounded-2" placeholder="Họ và tên" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control rounded-2" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control rounded-2" placeholder="Mật khẩu" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control rounded-2" placeholder="Nhập lại mật khẩu"
+                                    required>
+                            </div>
+                            <div class="mb-3" id="checkbox-m">
+                                <input type="checkbox">
+                                <label for="" class="small">Tôi đã đọc kĩ <a href="">điều khoản và dịch vụ</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-orange w-100 py-2">ĐĂNG KÝ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal lien he-->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Liên Hệ Với Chúng Tôi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+    
+                <!-- Body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Họ và Tên</label>
+                            <input type="text" class="form-control" id="name" placeholder="Nhập họ tên của bạn" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Nội dung thắc mắc</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Nhập nội dung" required></textarea>
+                        </div>
+                    </form>
+                </div>
+    
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary">Gửi Phản Hồi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="container-fluid mt-1">
         <div class="container-fluid">
             <div class="image-container d-none d-lg-block">
@@ -193,35 +356,35 @@
         </div>
     </div>
     </div>
-    <div id="footer" style="background-color: rgb(225, 136, 64); padding: 20px 0; color: white;">
+    <div id="footer" style="background-color: rgb(225, 224, 224); padding: 20px 0; color:black;">
         <div class="container">
             <div class="row ">
                 <div class="col-md-4 d-flex justify-content-center">
-                    <img class="rounded-circle" style="width: 300px;" src="IMAGE/logo_img.jpg" alt="5FriendTea Logo">
+                    <img class="rounded-circle" style="width: 300px;" src="../IMAGE/logo_img.jpg" alt="5FriendTea Logo">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 text-black">
                     <h5 class="md-3">LIÊN KẾT NHANH</h5>
                     <ul class="list-unstyled">
-                        <li><a href="HTML/index.html" class="nav-link text-white">Trang Chủ</a></li>
-                        <li><a href="#" class="nav-link text-white">Giới Thiệu</a></li>
-                        <li><a href="#" class="nav-link text-white">Sản Phẩm</a></li>
-                        <li><a href="HTML/index2.html" class="nav-link text-white">Khuyến Mãi</a></li>
-                        <li><a href="#" class="nav-link text-white">Chính Sách</a></li>
-                        <li><a href="#" class="nav-link text-white">Liên Hệ</a></li>
-                        
+                        <li><a href="index.html" class="nav-link">Trang Chủ</a></li>
+                        <li><a href="gioithieu.html" class="nav-link">Giới Thiệu</a></li>
+                        <li><a href="tra.html" class="nav-link">Sản Phẩm</a></li>
+                        <li><a href="khuyenmai.html" class="nav-link">Khuyến Mãi</a></li>
+                        <li><a href="#" class="nav-link">Chính Sách</a></li>
+                        <li><a href="#" class="nav-link">Liên Hệ</a></li>
+
                     </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 text-black">
                     <h5 class="md-3">THÔNG TIN LIÊN HỆ</h5>
                     <p>Địa chỉ: 242 Nguyễn Oanh, Gò Vấp, TP. Hồ Chí Minh</p>
                     <p>Hotline: 1990 0091</p>
                     <p>Email: 5friendstea@gmail.com.vn</p>
                     <p>Theo dõi chúng tôi:</p>
                     <div>
-                        <a href="https://facebook.com" class="text-white me-3" target="_blank">
+                        <a href="https://facebook.com" class="text-black me-3" target="_blank">
                             <i class="fab fa-facebook-f fa-lg"></i>
                         </a>
-                        <a href="https://instagram.com" class="text-white" target="_blank">
+                        <a href="https://instagram.com" class="text-black" target="_blank">
                             <i class="fab fa-instagram fa-lg"></i>
                         </a>
                     </div>
