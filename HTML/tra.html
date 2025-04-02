@@ -83,7 +83,7 @@
         }
 
         #header-sanpham_Tra,  #header-sanpham_TraSua, #header-sanpham_TraTraiCay, #header-sanpham_khac{
-            background-color: rgb(116, 138, 138);
+            background-color: rgb(239, 180, 189);
         }
 
         .drink-card {
@@ -194,6 +194,55 @@
             accent-color: blue;
         }
 
+        .cart-item-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cart-item-card:hover {
+            transform: translateX(-10px);
+        }
+
+        .cart-item-card img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .cart-item-card .cart-item-title {
+            flex: 1;
+            margin-left: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .cart-item-card .remove-item {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .cart-item-card:hover .remove-item {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .remove-item:hover {
+            background-color: #cc0000;
+        }
     </style>
 </head>
 
@@ -249,7 +298,11 @@
                             <i class="bi bi-person-circle fs-4"></i>
                         </a>
                     </li>
-                   
+                    <li class="nav-item" style="padding-bottom: 10px;">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart fs-4"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -358,6 +411,26 @@
         </div>
     </div>
 
+    <!-- Modal Giỏ Hàng -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Giỏ Hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <!-- Các sản phẩm trong giỏ hàng sẽ được hiển thị ở đây -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary">Thanh Toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     
     <div class="container-fluid">
@@ -677,7 +750,44 @@
 
     <!-- Bootstrap Script -->
     <script src="../javascript/bootstrap.bundle.min.js"></script>
-    
+    <script>
+        const cart = [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const drinkCard = button.closest('.drink-card');
+                const title = drinkCard.querySelector('.drink-title').textContent;
+                const imageSrc = drinkCard.querySelector('img').src;
+
+                cart.push({ title, imageSrc });
+                updateCartModal();
+            });
+        });
+
+        function updateCartModal() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+
+            cart.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'cart-item-card';
+                div.innerHTML = `
+                    <img src="${item.imageSrc}" alt="${item.title}">
+                    <span class="cart-item-title">${item.title}</span>
+                    <button class="remove-item" data-index="${index}">Xóa</button>
+                `;
+                cartItems.appendChild(div);
+            });
+
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const index = button.getAttribute('data-index');
+                    cart.splice(index, 1);
+                    updateCartModal();
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

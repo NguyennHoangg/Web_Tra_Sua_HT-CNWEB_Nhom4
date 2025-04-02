@@ -175,10 +175,15 @@
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal"><i class="bi bi-envelope fs-4"></i></a>
                     </li>
 
-
                     <li class="nav-item" style="padding-bottom: 10px;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
                             <i class="bi bi-person-circle fs-4"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item" style="padding-bottom: 10px;">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart fs-4"></i>
                         </a>
                     </li>
 
@@ -293,6 +298,26 @@
         </div>
     </div>
 
+    <!-- Modal Giỏ Hàng -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Giỏ Hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <!-- Các sản phẩm trong giỏ hàng sẽ được hiển thị ở đây -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary">Thanh Toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container-fluid mt-1">
         <div class="container-fluid">
@@ -443,8 +468,31 @@
 
         setInterval(changeImage, 4000); // Đổi ảnh mỗi 4 giây
 
+        const cart = [];
 
+        function updateCartModal() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
 
+            cart.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'cart-item-card';
+                div.innerHTML = `
+                    <img src="${item.imageSrc}" alt="${item.title}">
+                    <span class="cart-item-title">${item.title}</span>
+                    <button class="remove-item" data-index="${index}">Xóa</button>
+                `;
+                cartItems.appendChild(div);
+            });
+
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const index = button.getAttribute('data-index');
+                    cart.splice(index, 1);
+                    updateCartModal();
+                });
+            });
+        }
     </script>
 
     <!-- Bootstrap Script -->
