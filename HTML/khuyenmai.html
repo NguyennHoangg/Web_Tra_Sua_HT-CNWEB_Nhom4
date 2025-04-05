@@ -299,6 +299,29 @@
         </div>
     </div>
 
+    <!-- Modal Giỏ Hàng -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Giỏ Hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <!-- Các sản phẩm trong giỏ hàng sẽ được hiển thị ở đây -->
+                    </div>
+                    <div id="cartEmptyMessage" class="text-center text-muted">
+                        Giỏ hàng của bạn đang trống.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary">Thanh Toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="container">
@@ -520,6 +543,8 @@
                 });
             });
         }
+
+        
     </script>
 </body>
 
