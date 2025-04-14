@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../CSS/bootstrap-icons.css">
     <link rel="stylesheet" href="../CSS/all.min.css">
     <link rel="stylesheet" href="../CSS/form_model.css">
-
+    <script src="../javascript/form.js"></script>
+    <script src="../javascript/regex.js"></script>
 
     <title>5FriendTea</title>
     <style>
@@ -21,6 +22,39 @@
             margin: 0 10px;
             color: black;
         }
+
+        @keyframes slideFromTopLeft {
+            from {
+                transform: translate(-100%, -100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromTopRight {
+            from {
+                transform: translate(100%, -100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        .image-animate {
+            position: absolute;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-out;
+            opacity: 1;
+        }
+
+        
     </style>
 </head>
 
@@ -48,7 +82,8 @@
                         <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="tra.html" role="button" data-bs-toggle="dropdown">Thực đơn </a>
+                        <a class="nav-link dropdown-toggle" href="tra.html" role="button" data-bs-toggle="dropdown">Thực
+                            đơn </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="tra.html#header-sanpham_TraTraiCay">Trà Trái Cây</a></li>
                             <li><a class="dropdown-item" href="tra.html#header-sanpham_TraSua">Trà Sữa</a></li>
@@ -61,15 +96,16 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="tra.html" role="button" data-bs-toggle="dropdown">Thành Viên</a>
+                        <a class="nav-link dropdown-toggle" href="chinhsachthanhvien.html" role="button"
+                            data-bs-toggle="dropdown">Thành Viên</a>
                         <ul class="dropdown-menu">
-                            <li><a href="" class="dropdown-item">Chính sách thành viên</a></li>
-                            <li><a href="" class="dropdown-item">Chính sách bảo mật thông tin</a></li>
+                            <li><a href="chinhsachthanhvien.html" class="dropdown-item">Chính sách thành viên</a></li>
+                            <li><a href="chinhsachbaomat.html" class="dropdown-item">Chính sách bảo mật thông tin</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#footer" class="nav-link">Liên Hệ</a>
+                        <a href="lienhe.html" class="nav-link">Liên Hệ</a>
                     </li>
                     <li class="nav-item" style="padding-bottom: 10px;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">
@@ -84,10 +120,20 @@
                     <li class="nav-item" style="padding-bottom: 10px; position: relative;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#cartModal">
                             <i class="bi bi-cart fs-5"></i>
-                            <span id="cart-count" class="badge bg-danger rounded-circle position-absolute top--10 start-100 translate-middle">0</span>
+                            <span id="cart-count"
+                                class="badge bg-danger rounded-circle position-absolute top--10 start-100 translate-middle">0</span>
                         </a>
                     </li>
+
                 </ul>
+            </div>
+        </div>
+        <div class="search-container">
+            <button id="search-btn" class="search_box">
+                <i class="bi-search d-flex justify-content-center fs-2 text-white"></i>
+            </button>
+            <div id="search-field" class="search-field hidden" style="background-color: rgb(164, 8, 8); border: none;">
+                <input style="background-color: rgb(164, 8, 8); border: none; border-radius: 0px;" type="text" placeholder="Tìm kiếm..." class="form-control" >
             </div>
         </div>
     </nav>
@@ -133,7 +179,8 @@
                     <!-- Form Đăng Ký -->
                     <div class="tab-pane fade" id="register">
                         <form>
-                            <p class="mt-3 text-muted">Vui lòng đăng kí để hưởng nhiều ưu đãi độc quyền từ 5FRIENDSTEA</p>
+                            <p class="mt-3 text-muted">Vui lòng đăng kí để hưởng nhiều ưu đãi độc quyền từ 5FRIENDSTEA
+                            </p>
                             <div class="mb-3">
                                 <input type="text" class="form-control rounded-2" placeholder="Họ và tên" required>
                             </div>
@@ -168,25 +215,28 @@
                     <h5 class="modal-title" id="contactModalLabel">Liên Hệ Với Chúng Tôi</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-    
+
                 <!-- Body -->
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
                             <label for="name" class="form-label">Họ và Tên</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nhập họ tên của bạn" required>
+                            <input type="text" class="form-control" id="name" placeholder="Nhập họ tên của bạn"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" required>
+                            <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Nội dung thắc mắc</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="Nhập nội dung" required></textarea>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Nhập nội dung"
+                                required></textarea>
                         </div>
                     </form>
                 </div>
-    
+
                 <!-- Footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
@@ -220,71 +270,23 @@
         </div>
     </div>
 
-    <div class="container-fluid mt-1">
-        <div class="container-fluid">
+    <div class="mt-1">
+        <div class="">
             <div class="image-container d-none d-lg-block">
-                <img id="slider-img" src="../IMAGE/poster_trangchu.jpg" class="custom-img img-fluid"
-                    alt="Khuyến mãi" style="object-fit: contain;">
+                <img id="slider-img" src="../IMAGE/poster_trangchu.jpg" class="custom-img img-fluid" alt="Khuyến mãi"
+                    style="object-fit: contain;">
             </div>
 
             <div class="ratio ratio-16x9 d-lg-none">
-                <img id="slider-img" src="../IMAGE/poster_giamgia_binhgiangsinh.jpg" class="img-fluid"
-                    style="object-fit: cover;" alt="Khuyến mãi">
+                <img id="slider-img" src="../IMAGE/poster_trangchu2.jpg" class="img-fluid" style="object-fit: cover;"
+                    alt="Khuyến mãi">
             </div>
         </div>
 
 
     </div>
-
-    <div class="container mb-5" id="khuyenmai">
-        <div style="margin-top: 30px;">
-            <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="#trangchu">Trang chủ</a>
-            <span class="divider"> / </span>
-            <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="khuyenmai.html">Khuyến
-                mãi</a>
-        </div>
-        <hr>
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <div class="card promo-card">
-                        <img src="../IMAGE/poster_giamgia_donxuan.jpg" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Đón xuân Ất Tỵ</h5>
-                            <p class="card-text">Chào đón năm mới cùng 2 món mới toanh <br>
-                                cùng uống Trà sữa dâu cho cả năm đều đỏ</p>
-                            <a href="khuyenmai.html" class="btn btn-custom">Xem Chi Tiết</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card promo-card">
-                        <img src="../IMAGE/poster_giamgia3.jpg" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Chào mừng bộ 3 Giáng Sinh</h5>
-                            <p class="card-text">Trong không khí rộn ràng của mùa lễ hội Giáng Sinh cùng đón chờ bộ 3
-                                giáng sinh ngày 24/12/2025 nào</p>
-                            <a href="khuyenmai.html" class="btn btn-custom">Xem Chi Tiết</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card promo-card">
-                        <img src="../IMAGE/poster_giamgia4.png" class="card-img-top" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Cùng Chào Đón Mùa Lễ Hội Giáng Sinh</h5>
-                            <p class="card-text">Một mùa giáng sinh nữa lại về và bình bánh quy cũng đã quay trở lại
-                                cũng đã quay trở lại</p>
-                            <a href="khuyenmai.html" class="btn btn-custom">Xem Chi Tiết</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-center mt-3">
-                    <a href="khuyenmai.html"> <button class="btn btn-danger">Xem Thêm</button></a>
-                </div>
-            </div>
-        </div>
+    </div>
+    </div>
     </div>
     </div>
     <div id="footer" style="background-color: rgb(225, 224, 224); padding: 20px 0; color:black;">
@@ -330,91 +332,6 @@
             &copy; 2025 5FriendTea. All rights reserved.
         </p>
     </div>
-
-
-    <script>
-        const cart = [];
-
-        function updateCartModal() {
-            const cartItems = document.getElementById('cartItems');
-            const cartEmptyMessage = document.getElementById('cartEmptyMessage');
-            const cartCount = document.getElementById('cart-count');
-            cartItems.innerHTML = '';
-
-            if (cart.length === 0) {
-                cartEmptyMessage.style.display = 'block';
-            } else {
-                cartEmptyMessage.style.display = 'none';
-                cart.forEach((item, index) => {
-                    const div = document.createElement('div');
-                    div.className = 'cart-item-card';
-                    div.innerHTML = `
-                        <img src="${item.imageSrc}" alt="${item.title}">
-                        <span class="cart-item-title">${item.title}</span>
-                        <button class="remove-item" data-index="${index}">Xóa</button>
-                    `;
-                    cartItems.appendChild(div);
-                });
-
-                document.querySelectorAll('.remove-item').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const index = button.getAttribute('data-index');
-                        cart.splice(index, 1);
-                        updateCartModal();
-                    });
-                });
-            }
-
-            cartCount.textContent = cart.length; // Update the cart count dynamically
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Regex patterns
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Kiểm tra email hợp lệ
-            const nameRegex = /^[a-zA-ZÀ-ỹ\s]{2,50}$/; // Kiểm tra họ tên (chỉ chữ cái, khoảng trắng, độ dài 2-50 ký tự)
-            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // Kiểm tra mật khẩu (ít nhất 6 ký tự)
-
-            // Kiểm tra input khi rời khỏi trường
-            document.querySelectorAll('input').forEach(input => {
-                input.addEventListener('blur', () => {
-                    const value = input.value.trim();
-                    let errorMessage = '';
-
-                    // Kiểm tra từng trường input
-                    if (input.type === 'email') {
-                        if (!emailRegex.test(value)) {
-                            errorMessage = 'Email không hợp lệ!';
-                        }
-                    } else if (input.type === 'text' && input.id === 'name') {
-                        if (!nameRegex.test(value)) {
-                            errorMessage = 'Họ và tên không hợp lệ!';
-                        }
-                    } else if (input.type === 'password') {
-                        if (!passwordRegex.test(value)) {
-                            errorMessage = 'Mật khẩu phải có ít nhất 6 ký tự!';
-                        }
-                    }
-
-                    // Hiển thị hoặc xóa lỗi
-                    if (errorMessage) {
-                        input.classList.add('is-invalid');
-                        if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error-message')) {
-                            const error = document.createElement('div');
-                            error.className = 'error-message text-danger mt-1';
-                            error.textContent = errorMessage;
-                            input.parentNode.appendChild(error);
-                        }
-                    } else {
-                        input.classList.remove('is-invalid');
-                        if (input.nextElementSibling && input.nextElementSibling.classList.contains('error-message')) {
-                            input.nextElementSibling.remove();
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-
     <!-- Bootstrap Script -->
     <script src="../javascript/bootstrap.bundle.min.js"></script>
 </body>

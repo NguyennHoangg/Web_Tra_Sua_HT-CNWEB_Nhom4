@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap-icons.css">
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/form_model.css">
+    <script src="../javascript/form.js"></script>
+    <script src="../javascript/regex.js"></script>
+    <script src="../javascript/bootstrap.bundle.min.js"></script>
+
+    <title>5FriendTea</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img class="rounded-circle me-2" style="width: 60px;" src="../IMAGE/logo_img.jpg" alt="5FriendTea Logo">
+                <span class="fw-bold text-black fs-4">5FriendTea</span>
+            </a>
+
+            <button class="navbar-toggler border-0 text-black" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav fw-semibold text-uppercase" style="gap: 20px;">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active text-danger">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="tra.html" role="button" data-bs-toggle="dropdown">Thực
+                            đơn </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tra.html#header-sanpham_TraTraiCay">Trà Trái Cây</a></li>
+                            <li><a class="dropdown-item" href="tra.html#header-sanpham_TraSua">Trà Sữa</a></li>
+                            <li><a class="dropdown-item" href="tra.html#header-sanpham_Tra">Trà</a></li>
+                            <li><a class="dropdown-item" href="tra.html#header-sanpham_khac">Thức uống khác</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="khuyenmai.html" class="nav-link">Tin tức và ưu đãi</a>
+                    </li>
+
+                   
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="chinhsachbaomat.html" role="button"
+                            data-bs-toggle="dropdown">Thành Viên</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="chinhsachthanhvien.html" class="dropdown-item">Chính sách thành viên</a></li>
+                            <li><a href="chinhsachbaomat.html" class="dropdown-item">Chính sách bảo mật thông tin</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="lienhe.html" class="nav-link">Liên Hệ</a>
+                    </li>
+
+
+                    <li class="nav-item" style="padding-bottom: 10px;">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">
+                            <i class="bi bi-envelope fs-5"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="padding-bottom: 10px;">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
+                            <i class="bi bi-person-circle fs-5"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="padding-bottom: 10px; position: relative;">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart fs-5"></i>
+                            <span id="cart-count"
+                                class="badge bg-danger rounded-circle position-absolute top--10 start-100 translate-middle">0</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="search-container">
+            <button id="search-btn" class="search_box">
+                <i class="bi-search d-flex justify-content-center fs-2 text-white"></i>
+            </button>
+            <div id="search-field" class="search-field hidden" style="background-color: rgb(164, 8, 8); border: none;">
+                <input style="background-color: rgb(164, 8, 8); border: none; border-radius: 0px;" type="text" placeholder="Tìm kiếm..." class="form-control" >
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <!-- Modal Đăng Nhập / Đăng Ký -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+                <button type="button" class="btn-close position-absolute end-0 me-3 mt-2" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+
+                <!-- Tabs -->
+                <ul class="nav nav-tabs border-bottom pb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">ĐĂNG NHẬP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register">ĐĂNG KÝ</a>
+                    </li>
+                </ul>
+
+
+                <div class="tab-content mt-3">
+                    <!-- Form Đăng Nhập -->
+                    <div class="tab-pane fade show active" id="login">
+                        <form>
+                            <p class="mt-3 text-muted">Vui lòng đăng nhập trước khi mua vé để tích lũy điểm, cơ hội nhận
+                                thêm nhiều
+                                ưu đãi từ chương trình thành viên 5FRIENDSTEA.</p>
+                            <div class="mb-3">
+                                <input type="email" class="form-control rounded-2" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control rounded-2" placeholder="Mật khẩu" required>
+                            </div>
+                            <div class="mb-3">
+                                <a href="#" class="text-decoration-none text-muted">Quên mật khẩu?</a>
+                            </div>
+                            <button type="submit" class="btn btn-orange w-100 py-2">ĐĂNG NHẬP</button>
+                        </form>
+                    </div>
+
+                    <!-- Form Đăng Ký -->
+                    <div class="tab-pane fade" id="register">
+                        <form>
+                            <p class="mt-3 text-muted">Vui lòng đăng kí để hưởng nhiều ưu đãi độc quyền từ 5FRIENDSTEA
+                            </p>
+                            <div class="mb-3">
+                                <input type="text" class="form-control rounded-2" placeholder="Họ và tên" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control rounded-2" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control rounded-2" placeholder="Mật khẩu" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control rounded-2" placeholder="Nhập lại mật khẩu"
+                                    required>
+                            </div>
+                            <div class="mb-3" id="checkbox-m">
+                                <input type="checkbox">
+                                <label for="" class="small">Tôi đã đọc kĩ <a href="">điều khoản và dịch vụ</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-orange w-100 py-2">ĐĂNG KÝ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal lien he-->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Liên Hệ Với Chúng Tôi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Họ và Tên</label>
+                            <input type="text" class="form-control" id="name" placeholder="Nhập họ tên của bạn"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Nội dung thắc mắc</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Nhập nội dung"
+                                required></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary">Gửi Phản Hồi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Giỏ Hàng -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Giỏ Hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <!-- Các sản phẩm trong giỏ hàng sẽ được hiển thị ở đây -->
+                    </div>
+                    <div id="cartEmptyMessage" class="text-center text-muted">
+                        Giỏ hàng của bạn đang trống.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary">Thanh Toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer" style="background-color: rgb(225, 224, 224); padding: 20px 0; color:black;">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <img class="rounded-circle" style="width: 300px;" src="../IMAGE/logo_img.jpg" alt="5FriendTea Logo">
+                </div>
+                <div class="col-md-4 text-black">
+                    <h5 class="md-3">LIÊN KẾT NHANH</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="nav-link">Trang Chủ</a></li>
+                        <li><a href="gioithieu.html" class="nav-link">Giới Thiệu</a></li>
+                        <li><a href="tra.html" class="nav-link">Sản Phẩm</a></li>
+                        <li><a href="khuyenmai.html" class="nav-link">Khuyến Mãi</a></li>
+                        <li><a href="#" class="nav-link">Chính Sách</a></li>
+                        <li><a href="#" class="nav-link">Liên Hệ</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4 text-black">
+                    <h5 class="md-3">THÔNG TIN LIÊN HỆ</h5>
+                    <p>Địa chỉ: 242 Nguyễn Oanh, Gò Vấp, TP. Hồ Chí Minh</p>
+                    <p>Hotline: 1990 0091</p>
+                    <p>Email: 5friendstea@gmail.com.vn</p>
+                    <p>Theo dõi chúng tôi:</p>
+                    <div>
+                        <a href="https://facebook.com" class="text-black me-3" target="_blank">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                        <a href="https://instagram.com" class="text-black" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div style="background-color: brown; color: white; text-align: center; padding: 10px 0;">
+        <p class="mb-0 align-items-center">
+            &copy; 2025 5FriendTea. All rights reserved.
+        </p>
+    </div>
+</body>
+</html>

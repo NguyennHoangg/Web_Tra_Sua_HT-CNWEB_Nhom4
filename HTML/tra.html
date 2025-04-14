@@ -5,87 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="../CSS/all.min.css">
     <link rel="stylesheet" href="../CSS/bootstrap-icons.css">
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/form_model.css">
+    <script src="../javascript/form.js"></script>
+    <script src="../javascript/regex.js"></script>
 
     <title>5FriendTea</title>
     <style>
-        #fdf3eb body {
-            background-color: #fdf3eb;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .divider {
-            margin: 0 10px;
-            color: black;
-        }
-
-        .promo-card {
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .promo-card:hover {
-            transform: scale(1.05);
-            animation: shake 0.3s ease-in-out;
-        }
-
-        li {
-            margin-top: 10px;
-        }
-
-        .navbar {
-            background-color: white;
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .nav-link {
-            color: black;
-            transition: all 0.3s ease-in-out;
-            font-size: 16px;
-        }
-
-        .nav-link:hover,
-        .nav-item .active {
-            text-decoration: underline;
-            color: red;
-        }
-
-        .navbar-toggler {
-            color: white;
-        }
-
-        #khuyenmai a:hover {
-            color: blue;
-        }
-
-        body {
-            padding-top: 80px;
-            background-color: rgb(249, 236, 238);
-        }
-
-        .image-container {
-            position: relative;
-            width: 80vw;
-            height: 80vh;
-            overflow: hidden;
-            margin: auto;
-        }
-
-        .custom-img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-        }
+        
 
         #header-sanpham_Tra,
         #header-sanpham_TraSua,
@@ -156,28 +84,7 @@
         }
 
 
-        .btn-orange {
-            background-color: #ff6600;
-            color: white;
-            font-weight: bold;
-            border: none;
-        }
-
-        .btn-orange:hover {
-            background-color: #e65c00;
-        }
-
-        #login-tab {
-            text-decoration: none;
-        }
-
-        #register-tab {
-            text-decoration: none;
-        }
-
-        #checkbox-m input {
-            accent-color: blue;
-        }
+        
 
         .cart-item-card {
             display: flex;
@@ -232,7 +139,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg shadow-sm" id="trangchu">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand d-flex align-items-center" href="#">
@@ -240,7 +147,6 @@
                 <span class="fw-bold text-black fs-4">5FriendTea</span>
             </a>
 
-            <!-- Nút toggle cho mobile -->
             <button class="navbar-toggler border-0 text-black" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav">
                 <i class="fa-solid fa-bars"></i>
@@ -250,52 +156,68 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav fw-semibold text-uppercase" style="gap: 20px;">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link ">Trang Chủ</a>
+                        <a href="#" class="nav-link active text-danger">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
                         <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            style="text-decoration: underline;">Sản
-                            Phẩm</a>
+                        <a class="nav-link dropdown-toggle" href="tra.html" role="button" data-bs-toggle="dropdown">Thực
+                            đơn </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="tra.html#header-sanpham_TraTraiCay">Trà Trái Cây</a></li>
-                            <li><a class="dropdown-item" href="#header-sanpham_TraSua">Trà Sữa</a></li>
-                            <li><a class="dropdown-item" href="#header-sanpham_Tra">Trà</a></li>
-                            <li><a class="dropdown-item" href="#header-sanpham_khac">Thức uống khác</a></li>
+                            <li><a class="dropdown-item" href="tra.html#header-sanpham_TraSua">Trà Sữa</a></li>
+                            <li><a class="dropdown-item" href="tra.html#header-sanpham_Tra">Trà</a></li>
+                            <li><a class="dropdown-item" href="tra.html#header-sanpham_khac">Thức uống khác</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="khuyenmai.html" class="nav-link">Khuyến Mãi</a>
+                        <a href="khuyenmai.html" class="nav-link">Tin tức và ưu đãi</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="chinhsachbaomat.html" role="button"
+                            data-bs-toggle="dropdown">Thành Viên</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="chinhsachthanhvien.html" class="dropdown-item">Chính sách thành viên</a></li>
+                            <li><a href="chinhsachbaomat.html" class="dropdown-item">Chính sách bảo mật thông tin</a></li>
+                        </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#footer" class="nav-link">Liên Hệ</a>
+                        <a href="lienhe.html" class="nav-link">Liên Hệ</a>
                     </li>
-
                     <li class="nav-item" style="padding-bottom: 10px;">
-                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal"><i
-                                class="bi bi-envelope fs-4"></i></a>
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">
+                            <i class="bi bi-envelope fs-5"></i>
+                        </a>
                     </li>
-
-
                     <li class="nav-item" style="padding-bottom: 10px;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
-                            <i class="bi bi-person-circle fs-4"></i>
+                            <i class="bi bi-person-circle fs-5"></i>
                         </a>
                     </li>
                     <li class="nav-item" style="padding-bottom: 10px; position: relative;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#cartModal">
-                            <i class="bi bi-cart fs-4"></i>
+                            <i class="bi bi-cart fs-5"></i>
                             <span id="cart-count"
                                 class="badge bg-danger rounded-circle position-absolute top--10 start-100 translate-middle">0</span>
                         </a>
                     </li>
+
                 </ul>
             </div>
         </div>
+        <div class="search-container">
+            <button id="search-btn" class="search_box">
+                <i class="bi-search d-flex justify-content-center fs-2 text-white"></i>
+            </button>
+            <div id="search-field" class="search-field hidden" style="background-color: rgb(164, 8, 8); border: none;">
+                <input style="background-color: rgb(164, 8, 8); border: none; border-radius: 0px;" type="text" placeholder="Tìm kiếm..." class="form-control" >
+            </div>
+        </div>
     </nav>
+
     <!-- Modal Đăng Nhập / Đăng Ký -->
     <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -746,102 +668,7 @@
 
     <!-- Bootstrap Script -->
     <script src="../javascript/bootstrap.bundle.min.js"></script>
-    <script>
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Regex patterns
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Kiểm tra email hợp lệ
-            const nameRegex = /^[a-zA-ZÀ-ỹ\s]{2,50}$/; // Kiểm tra họ tên (chỉ chữ cái, khoảng trắng, độ dài 2-50 ký tự)
-            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // Kiểm tra mật khẩu (ít nhất 6 ký tự)
-
-            // Kiểm tra input khi rời khỏi trường
-            document.querySelectorAll('input').forEach(input => {
-                input.addEventListener('blur', () => {
-                    const value = input.value.trim();
-                    let errorMessage = '';
-
-                    // Kiểm tra từng trường input
-                    if (input.type === 'email') {
-                        if (!emailRegex.test(value)) {
-                            errorMessage = 'Email không hợp lệ!';
-                        }
-                    } else if (input.type === 'text' && input.id === 'name') {
-                        if (!nameRegex.test(value)) {
-                            errorMessage = 'Họ và tên không hợp lệ!';
-                        }
-                    } else if (input.type === 'password') {
-                        if (!passwordRegex.test(value)) {
-                            errorMessage = 'Mật khẩu phải có ít nhất 6 ký tự!';
-                        }
-                    }
-
-                    // Hiển thị hoặc xóa lỗi
-                    if (errorMessage) {
-                        input.classList.add('is-invalid');
-                        if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error-message')) {
-                            const error = document.createElement('div');
-                            error.className = 'error-message text-danger mt-1';
-                            error.textContent = errorMessage;
-                            input.parentNode.appendChild(error);
-                        }
-                    } else {
-                        input.classList.remove('is-invalid');
-                        if (input.nextElementSibling && input.nextElementSibling.classList.contains('error-message')) {
-                            input.nextElementSibling.remove();
-                        }
-                    }
-                });
-            });
-        });
-
-        const cart = [];
-
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const drinkCard = button.closest('.drink-card');
-                const title = drinkCard.querySelector('.drink-title').textContent;
-                const imageSrc = drinkCard.querySelector('img').src;
-
-                cart.push({ title, imageSrc });
-                updateCartModal();
-            });
-        });
-
-
-
-        function updateCartModal() {
-            const cartItems = document.getElementById('cartItems');
-            const cartEmptyMessage = document.getElementById('cartEmptyMessage');
-            const cartCount = document.getElementById('cart-count');
-            cartItems.innerHTML = '';
-
-            if (cart.length === 0) {
-                cartEmptyMessage.style.display = 'block';
-            } else {
-                cartEmptyMessage.style.display = 'none';
-                cart.forEach((item, index) => {
-                    const div = document.createElement('div');
-                    div.className = 'cart-item-card';
-                    div.innerHTML = `
-                        <img src="${item.imageSrc}" alt="${item.title}">
-                        <span class="cart-item-title">${item.title}</span>
-                        <button class="remove-item" data-index="${index}">Xóa</button>
-                    `;
-                    cartItems.appendChild(div);
-                });
-
-                document.querySelectorAll('.remove-item').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const index = button.getAttribute('data-index');
-                        cart.splice(index, 1);
-                        updateCartModal();
-                    });
-                });
-            }
-
-            cartCount.textContent = cart.length; // Update the cart count dynamically
-        }
-    </script>
+    
 </body>
 
 </html>

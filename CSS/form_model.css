@@ -24,6 +24,7 @@ li {
     top: 0;
     width: 100%;
     z-index: 1000;
+    height: 85px;
 }
 
 .nav-link {
@@ -129,4 +130,91 @@ li {
 #login-tab,
 #register-tab {
     text-decoration: none;
+}
+
+/*Button search*/
+.search-container {
+    height: 100%;
+    width: 100px;
+    background-color: rgb(164, 8, 8);
+    position: absolute;
+    top: 0;
+    right: 120px;
+    border: none;
+    cursor: pointer;
+}
+
+.search_box {
+    height: 100%;
+    width: 100px;
+    background-color: rgb(164, 8, 8);
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.search-field {
+    position: absolute;
+    top: 100%;
+    /* Hiển thị bên dưới nút search */
+    right: 0;
+    width: 250px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-20px);
+    /* Ẩn ban đầu */
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.search-field.visible {
+    transform: translateY(0);
+    /* Hiển thị */
+    opacity: 1;
+}
+
+.search-field.hidden {
+    transform: translateY(-20px);
+    /* Ẩn */
+    opacity: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.divider {
+    margin: 0 10px;
+    color: black;
+}
+
+.search-field input {
+    border: none; /* Loại bỏ viền */
+    outline: none; /* Loại bỏ viền khi focus */
+    background-color: rgb(164, 8, 8); /* Màu nền */
+    color: white; /* Màu chữ */
+    padding: 5px 10px; /* Giảm khoảng cách bên trong */
+    border-radius: 5px; /* Góc bo tròn */
+    width: 150px; /* Chiều rộng nhỏ hơn */
+    font-size: 14px; /* Kích thước chữ nhỏ hơn */
+    transition: all 0.3s ease; /* Hiệu ứng mượt khi thay đổi */
+    height: 20px;
+}
+
+.search-field input::placeholder {
+    color: #ccc; /* Màu placeholder */
+    opacity: 1; /* Đảm bảo placeholder hiển thị rõ */
+}
+
+.search-field input:focus {
+    border: none !important; /* Đảm bảo không hiển thị viền khi focus */
+    outline: none !important; /* Loại bỏ outline khi focus */
+    background-color: rgb(164, 8, 8); /* Giữ màu nền khi focus */
+    box-shadow: none !important; /* Loại bỏ bất kỳ hiệu ứng shadow nào */
 }
