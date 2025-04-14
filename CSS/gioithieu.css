@@ -1,0 +1,27 @@
+.team-member img {
+    width: 120px; /* Kích thước ảnh */
+    height: 120px;
+    object-fit: cover;
+    border: 5px solid white; /* Viền trắng */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+}
+
+.team-member h5 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #6c757d; /* Màu chữ xám nhạt */
+}
+
+
+.team-member {
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    animation: shake 0.3s ease-in-out;
+}

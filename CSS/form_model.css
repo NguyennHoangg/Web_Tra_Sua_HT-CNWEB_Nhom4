@@ -139,7 +139,7 @@ li {
     background-color: rgb(164, 8, 8);
     position: absolute;
     top: 0;
-    right: 120px;
+    right: 80px;
     border: none;
     cursor: pointer;
 }
@@ -201,7 +201,7 @@ li {
     color: white; /* Màu chữ */
     padding: 5px 10px; /* Giảm khoảng cách bên trong */
     border-radius: 5px; /* Góc bo tròn */
-    width: 150px; /* Chiều rộng nhỏ hơn */
+    width: 100%; /* Chiều rộng nhỏ hơn */
     font-size: 14px; /* Kích thước chữ nhỏ hơn */
     transition: all 0.3s ease; /* Hiệu ứng mượt khi thay đổi */
     height: 20px;

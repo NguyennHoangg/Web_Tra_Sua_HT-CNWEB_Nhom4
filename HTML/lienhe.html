@@ -10,6 +10,7 @@
     <script src="../javascript/form.js"></script>
     <script src="../javascript/regex.js"></script>
     <script src="../javascript/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/userController.js"></script>
     <title>5FriendTea</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav fw-semibold text-uppercase" style="gap: 20px;">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active text-danger">Trang Chủ</a>
+                        <a href="index.html" class="nav-link">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
                         <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
@@ -60,7 +61,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="lienhe.html" class="nav-link">Liên Hệ</a>
+                        <a href="lienhe.html" class="nav-link" style="text-decoration: underline;">Liên Hệ</a>
                     </li>
                     <li class="nav-item" style="padding-bottom: 10px;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">
@@ -70,6 +71,7 @@
                     <li class="nav-item" style="padding-bottom: 10px;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
                             <i class="bi bi-person-circle fs-5"></i>
+                            <span id="user-name" class="ms-2"></span>
                         </a>
                     </li>
                     <li class="nav-item" style="padding-bottom: 10px; position: relative;">
@@ -226,7 +228,53 @@
         </div>
     </div>
 
+    
+    <div class="container-fluid">
+        <img src="../IMAGE/poster_sanpham.jpg" class="img-fluid mt-1 " alt="">
+    </div>
 
+
+    <div class="container py-5">
+        <h1 class="text-center fw-bold mb-4">LIÊN HỆ VỚI CHÚNG TÔI</h1>
+        <div class="row">
+            <!-- Danh sách cửa hàng -->
+            <div class="col-md-4" >
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <h5 class="fw-bold">Cơ sở chính</h5>
+                        <p>12 Nguyễn Văn Bảo, Phường 1, Gò Vấp, Hồ Chí Minh, Việt Nam</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h5 class="fw-bold">Đà Lạt</h5>
+                        <p>5FriendsTea Đà Lạt</p>
+                        <p>302 Bùi Thị Xuân, phường 2, TP. Đà Lạt, Tỉnh Lâm Đồng</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h5 class="fw-bold">Sóc Trăng</h5>
+                        <p>5FriendsTea Sóc Trăng</p>
+                        <p>PG 01-16 Vincom Shophouse Trần Hưng Đạo, Phường 2, TP. Sóc Trăng, Tỉnh Sóc Trăng</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h5 class="fw-bold">Nha Trang</h5>
+                        <p>5FriendsTea Nha Trang</p>
+                        <p>109 Hồng Bàng, phường Tân Lập, Thành phố Nha Trang</p>
+                    </div>
+                    <div class="list-group-item">
+                        <h5 class="fw-bold">Hồ Chí Minh</h5>
+                        <p>5FriendsTea Lê Văn Sỹ</p>
+                        <p>242 Nguyễn Oanh, Gò Vấp, TP. Hồ Chí Minh</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bản đồ -->
+            <div class="col-md-8">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.8582379832346!2d106.68426511131247!3d10.822158889284907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1744656282117!5m2!1svi!2s"
+                    width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
 
     <div id="footer" style="background-color: rgb(225, 224, 224); padding: 20px 0; color:black;">
         <div class="container">
@@ -248,7 +296,7 @@
                 </div>
                 <div class="col-md-4 text-black">
                     <h5 class="md-3">THÔNG TIN LIÊN HỆ</h5>
-                    <p>Địa chỉ: 242 Nguyễn Oanh, Gò Vấp, TP. Hồ Chí Minh</p>
+                    <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 1, Gò Vấp, Hồ Chí Minh, Việt Nam</p>
                     <p>Hotline: 1990 0091</p>
                     <p>Email: 5friendstea@gmail.com.vn</p>
                     <p>Theo dõi chúng tôi:</p>

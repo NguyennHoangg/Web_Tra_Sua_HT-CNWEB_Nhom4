@@ -10,6 +10,7 @@
     <script src="../javascript/form.js"></script>
     <script src="../javascript/regex.js"></script>
     <script src="../javascript/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/userController.js"></script>
 
     <title>5FriendTea</title>
 </head>
@@ -31,7 +32,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav fw-semibold text-uppercase" style="gap: 20px;">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active text-danger">Trang Chủ</a>
+                        <a href="index.html" class="nav-link active text-danger">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
                         <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
@@ -53,7 +54,7 @@
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="chinhsachbaomat.html" role="button"
-                            data-bs-toggle="dropdown">Thành Viên</a>
+                            data-bs-toggle="dropdown" style="text-decoration: underline;">Thành Viên</a>
                         <ul class="dropdown-menu">
                             <li><a href="chinhsachthanhvien.html" class="dropdown-item">Chính sách thành viên</a></li>
                             <li><a href="chinhsachbaomat.html" class="dropdown-item">Chính sách bảo mật thông tin</a></li>
@@ -71,6 +72,7 @@
                     <li class="nav-item" style="padding-bottom: 10px;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
                             <i class="bi bi-person-circle fs-5"></i>
+                            <span id="user-name" class="ms-2"></span>
                         </a>
                     </li>
                     <li class="nav-item" style="padding-bottom: 10px; position: relative;">
@@ -227,6 +229,163 @@
         </div>
     </div>
 
+    
+    <div class="container-fluid">
+        <img src="../IMAGE/poster_chinhsachthanhvien.jpg" class="img-fluid mt-1 " alt="">
+    </div>
+
+    <div class="container py-5">
+        <h1 class="text-center fw-bold mb-4">CHÍNH SÁCH THÀNH VIÊN ỨNG DỤNG CỦA CHÚNG TÔI </h1>
+
+        <!-- Section A -->
+        <h4 class="fw-bold">A. ĐIỂM TÍCH LŨY</h4>
+        <p>Chương trình tích điểm thành viên của chúng tôi cho phép bạn tích điểm và chủ động đổi điểm để lấy những ưu đãi, phần quà hấp dẫn từ của chúng tôi. Với mỗi hóa đơn chi tiêu tại cửa hàng, bạn sẽ được tích điểm tương đương với số tiền mà bạn đã thanh toán.</p>
+        <p><strong>Ứng dụng sẽ ghi nhận đồng thời 02 loại điểm:</strong></p>
+        <ul>
+            <li><strong>Điểm xét hạng:</strong> Dùng xét hạng thành viên. Quy cách tính điểm: 10,000 vnđ = 1 Lá trà.</li>
+            <li><strong>Điểm đổi quà:</strong> Dùng đổi điểm lấy quà. Quy cách tính điểm: theo bảng bên dưới:</li>
+        </ul>
+
+        <!-- Table 1 -->
+        <table class="table table-bordered text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>Hạng</th>
+                    <th>Hệ số Boba</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>E – Member</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Red – Member</td>
+                    <td>1.2</td>
+                </tr>
+                <tr>
+                    <td>Gold – Member</td>
+                    <td>1.5</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Lưu ý:</strong> Boba đổi quà được nhân hệ số theo hạng thành viên tương ứng.</p>
+
+        <!-- Table 2 -->
+        <table class="table table-bordered text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>Hạng</th>
+                    <th>Giá trị đơn hàng</th>
+                    <th>Quy đổi điểm xét hạng</th>
+                    <th>Quy đổi điểm đổi quà</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>E-Member</td>
+                    <td>100.000 vnđ</td>
+                    <td>10 lá trà</td>
+                    <td>10 boba</td>
+                </tr>
+                <tr>
+                    <td>Red-Member</td>
+                    <td>100.000 vnđ</td>
+                    <td>10 lá trà</td>
+                    <td>12 boba</td>
+                </tr>
+                <tr>
+                    <td>Gold-Member</td>
+                    <td>100.000 vnđ</td>
+                    <td>10 lá trà</td>
+                    <td>15 boba</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Section B -->
+        <h4 class="fw-bold">B. HẠNG THÀNH VIÊN VÀ QUYỀN LỢI THÀNH VIÊN</h4>
+        <p>Ứng dụng có ba hạng mức thành viên với các mức quyền lợi khác nhau. Hạng thành viên được xác định theo số tiền chi tiêu của khách tại hệ thống cửa hàng:</p>
+
+        <!-- Table 3 -->
+        <table class="table table-bordered text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>Hạng</th>
+                    <th>Điều kiện tích điểm</th>
+                    <th>Quyền lợi thành viên</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>E – Member</td>
+                    <td>Lần đầu đăng kí thành viên trên ứng dụng, bạn sẽ là thành viên E – Member.</td>
+                    <td>
+                        <ul class="text-start">
+                            <li>Nhận voucher miễn phí 1 thức uống size M trên menu vào ngày sinh nhật.</li>
+                            <li>Tích lũy Boba để đổi các phần quà hấp dẫn đến từ của chúng tôi.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Red – Member</td>
+                    <td>Khi tích đủ 500 lá trà (tương đương chi tiêu 5.000.000 vnđ).</td>
+                    <td>
+                        <ul class="text-start">
+                            <li>Nhận voucher miễn phí 1 thức uống size M trên menu vào ngày sinh nhật.</li>
+                            <li>Tích lũy Boba để đổi các phần quà hấp dẫn đến từ của chúng tôi.</li>
+                            <li>Điểm Boba được nhân hệ số 1,2 khi tích điểm.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gold – Member</td>
+                    <td>Khi tích đủ 1500 lá trà (tương đương chi tiêu 15.000.000 vnđ).</td>
+                    <td>
+                        <ul class="text-start">
+                            <li>Nhận voucher miễn phí 1 thức uống size M trên menu vào ngày sinh nhật.</li>
+                            <li>Tích lũy Boba để đổi các phần quà hấp dẫn đến từ của chúng tôi.</li>
+                            <li>Điểm Boba được nhân hệ số 1,5 khi tích điểm.</li>
+                            <li>Đặc quyền thưởng thức sản phẩm mới miễn phí.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Section C -->
+        <h4 class="fw-bold">C. QUY TẮC XÉT HẠNG THÀNH VIÊN</h4>
+        <p>Hệ thống tự động xét điểm và hạng thành viên theo chu kỳ 365 ngày kể từ ngày xét hạng. Sau quá trình tích lũy điểm, bạn sẽ được nâng hạng thành viên với nhiều ưu đãi đặc biệt hơn tương ứng với từng hạng đạt được.</p>
+
+        <!-- Table 4 -->
+        <table class="table table-bordered text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>Hạng</th>
+                    <th>Red-Member</th>
+                    <th>Gold-Member</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nâng hạng</td>
+                    <td>Từ E-Member lên Red-Member: Tích đủ 500 lá trà (Tương đương 5.000.000 vnđ)</td>
+                    <td>Từ E-Member lên Gold-Member: Tích đủ 1500 lá trà (Tương đương 15.000.000 vnđ)</td>
+                </tr>
+                <tr>
+                    <td>Giữ hạng</td>
+                    <td>Trong 365 ngày, tích đủ 500 lá trà (Tương đương 5.000.000 vnđ)</td>
+                    <td>Trong 365 ngày, tích đủ 1000 lá trà (Tương đương 10.000.000 vnđ)</td>
+                </tr>
+                <tr>
+                    <td>Hạ hạng</td>
+                    <td>Trong 365 ngày, tích dưới 500 lá trà (Tương đương dưới 5.000.000 vnđ)</td>
+                    <td>Trong 365 ngày, tích dưới 1000 lá trà (Tương đương dưới 10.000.000 vnđ)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <div id="footer" style="background-color: rgb(225, 224, 224); padding: 20px 0; color:black;">
         <div class="container">
@@ -248,7 +407,7 @@
                 </div>
                 <div class="col-md-4 text-black">
                     <h5 class="md-3">THÔNG TIN LIÊN HỆ</h5>
-                    <p>Địa chỉ: 242 Nguyễn Oanh, Gò Vấp, TP. Hồ Chí Minh</p>
+                    <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 1, Gò Vấp, Hồ Chí Minh, Việt Nam</p>
                     <p>Hotline: 1990 0091</p>
                     <p>Email: 5friendstea@gmail.com.vn</p>
                     <p>Theo dõi chúng tôi:</p>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../CSS/form_model.css">
     <script src="../javascript/form.js"></script>
     <script src="../javascript/regex.js"></script>
-
+    <script src="../javascript/userController.js"></script>
     <title>5FriendTea</title>
 </head>
 
@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav fw-semibold text-uppercase" style="gap: 20px;">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active text-danger">Trang Chủ</a>
+                        <a href="#" class="nav-link">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
                         <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
@@ -48,7 +48,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="khuyenmai.html" class="nav-link">Tin tức và ưu đãi</a>
+                        <a href="khuyenmai.html" class="nav-link" style="text-decoration: underline;">Tin tức và ưu đãi</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -71,8 +71,10 @@
                     <li class="nav-item" style="padding-bottom: 10px;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
                             <i class="bi bi-person-circle fs-5"></i>
+                            <span id="user-name" class="ms-2"></span>
                         </a>
                     </li>
+                    
                     <li class="nav-item" style="padding-bottom: 10px; position: relative;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#cartModal">
                             <i class="bi bi-cart fs-5"></i>
@@ -384,7 +386,7 @@
                 </div>
                 <div class="col-md-4 text-black">
                     <h5 class="md-3">THÔNG TIN LIÊN HỆ</h5>
-                    <p>Địa chỉ: 242 Nguyễn Oanh, Gò Vấp, TP. Hồ Chí Minh</p>
+                    <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 1, Gò Vấp, Hồ Chí Minh, Việt Nam</p>
                     <p>Hotline: 1990 0091</p>
                     <p>Email: 5friendstea@gmail.com.vn</p>
                     <p>Theo dõi chúng tôi:</p>

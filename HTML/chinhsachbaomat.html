@@ -10,6 +10,7 @@
     <script src="../javascript/form.js"></script>
     <script src="../javascript/regex.js"></script>
     <script src="../javascript/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/userController.js"></script>
 
     <title>5FriendTea</title>
 </head>
@@ -31,7 +32,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav fw-semibold text-uppercase" style="gap: 20px;">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active text-danger">Trang Chủ</a>
+                        <a href="index.html" class="nav-link active text-danger">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
                         <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
@@ -53,7 +54,7 @@
                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="chinhsachbaomat.html" role="button"
-                            data-bs-toggle="dropdown">Thành Viên</a>
+                            data-bs-toggle="dropdown" style="text-decoration: underline;">Thành Viên</a>
                         <ul class="dropdown-menu">
                             <li><a href="chinhsachthanhvien.html" class="dropdown-item">Chính sách thành viên</a></li>
                             <li><a href="chinhsachbaomat.html" class="dropdown-item">Chính sách bảo mật thông tin</a></li>
@@ -73,6 +74,7 @@
                     <li class="nav-item" style="padding-bottom: 10px;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#authModal">
                             <i class="bi bi-person-circle fs-5"></i>
+                            <span id="user-name" class="ms-2"></span>
                         </a>
                     </li>
                     <li class="nav-item" style="padding-bottom: 10px; position: relative;">
@@ -230,6 +232,70 @@
         </div>
     </div>
 
+    
+    <div class="container-fluid">
+        <img src="../IMAGE/poster_chinhsachthanhvien.jpg" class="img-fluid mt-1 " alt="">
+    </div>
+
+
+    <div class="container py-5">
+        <h1 class="text-center fw-bold mb-4">CHÍNH SÁCH BẢO MẬT THÔNG TIN ỨNG DỤNG CỦA CHÚNG TÔI</h1>
+
+        <!-- Section 1 -->
+        <div class="mb-4">
+            <h5 class="fw-bold">1. Bảo mật thông tin</h5>
+            <p>Chúng tôi – thương hiệu trực thuộc Công ty TNHH Golden Trust (đơn vị sở hữu, quản lý website và Ứng dụng thành viên Chúng tôi VN sau đây gọi chung là Hệ thống) hiểu mối quan tâm về việc các thông tin cá nhân mà bạn chia sẻ được chúng tôi quản lý và sử dụng như thế nào. Bạn vui lòng đọc và tìm hiểu về các quy định bảo mật trong các phần tiếp theo. Việc bạn đăng ký và sử dụng Hệ Thống có nghĩa rằng bạn đã đồng ý với các điều khoản của các điều khoản bảo mật của Chúng tôi.</p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="mb-4">
+            <h5 class="fw-bold">2. Thông tin cá nhân</h5>
+            <p>Chúng tôi hoàn toàn miễn phí và không yêu cầu thông tin cá nhân của bạn. Tuy nhiên, một số tiện ích nâng cao tập trung chủ yếu vào Ứng dụng Chúng tôi VN cần một số thông tin cá nhân cơ bản để xác nhận đăng ký thành viên như: Tên, Email, Số Điện Thoại và một số thông tin khác. Các thông tin cá nhân này được thu thập nhằm mục đích xác nhận, nhận diện và liên hệ với bạn khi cần giải quyết các vấn đề liên quan.</p>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="mb-4">
+            <h5 class="fw-bold">3. Cách thức sử dụng thông tin đã được lưu trữ</h5>
+            <p>Chúng tôi tôn trọng về quyền riêng tư và cam kết chỉ sử dụng các thông tin bạn cung cấp để liên hệ, phản hồi những câu hỏi, thực hiện các yêu cầu của bạn hoặc với mục đích tiếp thị sau khi được bạn đồng ý. Thông tin cá nhân của bạn sẽ không bị chia sẻ với bất kỳ bên thứ ba nào khi chưa có sự đồng ý của bạn.</p>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="mb-4">
+            <h5 class="fw-bold">4. Bảo đảm an toàn đối với thông tin được lưu trữ</h5>
+            <p>Chúng tôi chỉ lưu trữ các thông tin cá nhân trong phạm vi phù hợp và cần thiết cho mục đích phục vụ đúng đắn và duy trì các biện pháp phù hợp nhằm đảm bảo tính an toàn, độ chính xác và tính bảo mật những thông tin mà bạn đã cung cấp.</p>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="mb-4">
+            <h5 class="fw-bold">5. Lịch sử tìm kiếm</h5>
+            <p>Hệ Thống sẽ lưu trữ lịch sử tìm kiếm của bạn trong hệ thống với mục đích để có thể đưa ra kết quả tìm kiếm của bạn lần sau chính xác hơn và phù hợp với nhu cầu của bạn nhanh nhất.</p>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="mb-4">
+            <h5 class="fw-bold">6. Cookies</h5>
+            <p>Cookies là một lượng nhỏ dữ liệu, có thể bao gồm ghi chép các hoạt động trong một Website. Chúng tôi sử dụng cookies để ghi chép các hoạt động của nguời sử dụng và để đáp ứng các yêu cầu của người sử dụng và các mục đích phục vụ khách hàng.</p>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="mb-4">
+            <h5 class="fw-bold">7. Sửa đổi thông tin tài khoản</h5>
+            <p>Bạn có thể sửa đổi, cập nhật thông tin tài khoản của bạn khi cần (trừ một số thông tin cố định không thể thay đổi như Ngày sinh mà bạn đã chọn).</p>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="mb-4">
+            <h5 class="fw-bold">8. Liên kết đến các Website thứ 3</h5>
+            <p>Chúng tôi luôn thực hiện các biện pháp bảo mật khác nhau để duy trì sự an toàn của dữ liệu cá nhân của bạn mà chúng tôi lưu giữ hoặc kiểm soát.</p>
+        </div>
+
+        <!-- Section 9 -->
+        <div class="mb-4">
+            <h5 class="fw-bold">9. Thay đổi điều khoản</h5>
+            <p>Chúng tôi có toàn quyền chỉnh sửa nội dung trong trang này mà không cần phải cảnh báo hoặc báo trước. Khi bạn tiếp tục sử dụng Hệ Thống, có nghĩa là bạn đồng ý và chấp nhận bị ràng buộc với các thay đổi trong bản quy định bảo mật trực tuyến này.</p>
+        </div>
+    </div>
+
 
     <div id="footer" style="background-color: rgb(225, 224, 224); padding: 20px 0; color:black;">
         <div class="container">
@@ -251,7 +317,7 @@
                 </div>
                 <div class="col-md-4 text-black">
                     <h5 class="md-3">THÔNG TIN LIÊN HỆ</h5>
-                    <p>Địa chỉ: 242 Nguyễn Oanh, Gò Vấp, TP. Hồ Chí Minh</p>
+                    <p>Địa chỉ: 12 Nguyễn Văn Bảo, Phường 1, Gò Vấp, Hồ Chí Minh, Việt Nam</p>
                     <p>Hotline: 1990 0091</p>
                     <p>Email: 5friendstea@gmail.com.vn</p>
                     <p>Theo dõi chúng tôi:</p>

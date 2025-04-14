@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else if (input.type === 'password') {
                 if (!passwordRegex.test(value)) {
-                    errorMessage = 'Mật khẩu phải có ít nhất 6 ký tự!';
+                    errorMessage = 'Mật khẩu có độ dài tối thiểu là 8 ký tự và chỉ chứa các ký tự chữ cái (A-Z, a-z), chữ số (0-9), và các ký tự đặc biệt trong nhóm @$!%*?&';
                 }
             }
 
