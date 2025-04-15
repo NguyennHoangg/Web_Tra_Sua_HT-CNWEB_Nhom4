@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="../CSS/form_model.css">
     <script src="../javascript/form.js"></script>
     <script src="../javascript/regex.js"></script>
-    <script src="../javascript/bootstrap.bundle.min.js"></script>
-    <script src="../javascript/userController.js"></script>
+    
     <title>5FriendTea</title>
 </head>
 <body>
@@ -106,26 +105,28 @@
                 <!-- Tabs -->
                 <ul class="nav nav-tabs border-bottom pb-2">
                     <li class="nav-item">
-                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">ĐĂNG NHẬP</a>
+                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#loginForm">ĐĂNG NHẬP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register">ĐĂNG KÝ</a>
+                        <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#registerForm">ĐĂNG KÝ</a>
                     </li>
                 </ul>
 
 
                 <div class="tab-content mt-3">
                     <!-- Form Đăng Nhập -->
-                    <div class="tab-pane fade show active" id="login">
+                    <div class="tab-pane fade show active" id="loginForm">
                         <form>
                             <p class="mt-3 text-muted">Vui lòng đăng nhập trước khi mua vé để tích lũy điểm, cơ hội nhận
                                 thêm nhiều
                                 ưu đãi từ chương trình thành viên 5FRIENDSTEA.</p>
                             <div class="mb-3">
-                                <input type="email" class="form-control rounded-2" placeholder="Email" required>
+                                <input id="loginEmail" type="email" class="form-control rounded-2" placeholder="Email"
+                                    required>
                             </div>
                             <div class="mb-3">
-                                <input type="password" class="form-control rounded-2" placeholder="Mật khẩu" required>
+                                <input id="loginPassword" type="password" class="form-control rounded-2"
+                                    placeholder="Mật khẩu" required>
                             </div>
                             <div class="mb-3">
                                 <a href="#" class="text-decoration-none text-muted">Quên mật khẩu?</a>
@@ -135,18 +136,21 @@
                     </div>
 
                     <!-- Form Đăng Ký -->
-                    <div class="tab-pane fade" id="register">
+                    <div class="tab-pane fade" id="registerForm">
                         <form>
                             <p class="mt-3 text-muted">Vui lòng đăng kí để hưởng nhiều ưu đãi độc quyền từ 5FRIENDSTEA
                             </p>
                             <div class="mb-3">
-                                <input type="text" class="form-control rounded-2" placeholder="Họ và tên" required>
+                                <input id="registerName" type="text" class="form-control rounded-2"
+                                    placeholder="Họ và tên" required>
                             </div>
                             <div class="mb-3">
-                                <input type="email" class="form-control rounded-2" placeholder="Email" required>
+                                <input id="registerEmail" type="email" class="form-control rounded-2"
+                                    placeholder="Email" required>
                             </div>
                             <div class="mb-3">
-                                <input type="password" class="form-control rounded-2" placeholder="Mật khẩu" required>
+                                <input id="registerPassword" type="password" class="form-control rounded-2"
+                                    placeholder="Mật khẩu" required>
                             </div>
                             <div class="mb-3">
                                 <input type="password" class="form-control rounded-2" placeholder="Nhập lại mật khẩu"
@@ -319,5 +323,8 @@
             &copy; 2025 5FriendTea. All rights reserved.
         </p>
     </div>
+    <script src="../javascript/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/userController.js"></script>
+
 </body>
 </html>

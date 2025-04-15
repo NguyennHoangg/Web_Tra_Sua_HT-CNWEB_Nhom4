@@ -14,8 +14,6 @@
 
     <title>5FriendTea</title>
     <style>
-        
-
         #header-sanpham_Tra,
         #header-sanpham_TraSua,
         #header-sanpham_TraTraiCay,
@@ -85,7 +83,7 @@
         }
 
 
-        
+
 
         .cart-item-card {
             display: flex;
@@ -163,7 +161,8 @@
                         <a href="gioithieu.html" class="nav-link">Giới Thiệu</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="tra.html" role="button" data-bs-toggle="dropdown" style="text-decoration: underline;">Thực
+                        <a class="nav-link dropdown-toggle" href="tra.html" role="button" data-bs-toggle="dropdown"
+                            style="text-decoration: underline;">Thực
                             đơn </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="tra.html#header-sanpham_TraTraiCay">Trà Trái Cây</a></li>
@@ -181,7 +180,8 @@
                             data-bs-toggle="dropdown">Thành Viên</a>
                         <ul class="dropdown-menu">
                             <li><a href="chinhsachthanhvien.html" class="dropdown-item">Chính sách thành viên</a></li>
-                            <li><a href="chinhsachbaomat.html" class="dropdown-item">Chính sách bảo mật thông tin</a></li>
+                            <li><a href="chinhsachbaomat.html" class="dropdown-item">Chính sách bảo mật thông tin</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -215,7 +215,8 @@
                 <i class="bi-search d-flex justify-content-center fs-2 text-white"></i>
             </button>
             <div id="search-field" class="search-field hidden" style="background-color: rgb(164, 8, 8); border: none;">
-                <input style="background-color: rgb(164, 8, 8); border: none; border-radius: 0px;" type="text" placeholder="Tìm kiếm..." class="form-control" >
+                <input style="background-color: rgb(164, 8, 8); border: none; border-radius: 0px;" type="text"
+                    placeholder="Tìm kiếm..." class="form-control">
                 <i class="bi-search text-white"></i>
             </div>
         </div>
@@ -231,17 +232,17 @@
                 <!-- Tabs -->
                 <ul class="nav nav-tabs border-bottom pb-2">
                     <li class="nav-item">
-                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">ĐĂNG NHẬP</a>
+                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#loginForm">ĐĂNG NHẬP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register">ĐĂNG KÝ</a>
+                        <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#registerForm">ĐĂNG KÝ</a>
                     </li>
                 </ul>
 
 
                 <div class="tab-content mt-3">
                     <!-- Form Đăng Nhập -->
-                    <div class="tab-pane fade show active" id="login">
+                    <div class="tab-pane fade show active" id="loginForm">
                         <form>
                             <p class="mt-3 text-muted">Vui lòng đăng nhập trước khi mua vé để tích lũy điểm, cơ hội nhận
                                 thêm nhiều
@@ -260,7 +261,7 @@
                     </div>
 
                     <!-- Form Đăng Ký -->
-                    <div class="tab-pane fade" id="register">
+                    <div class="tab-pane fade" id="registerForm">
                         <form>
                             <p class="mt-3 text-muted">Vui lòng đăng kí để hưởng nhiều ưu đãi độc quyền từ 5FRIENDSTEA
                             </p>
@@ -669,9 +670,10 @@
         </p>
     </div>
 
-    <!-- Bootstrap Script -->
     <script src="../javascript/bootstrap.bundle.min.js"></script>
-    
+    <script src="../javascript/userController.js"></script>
+
+
 </body>
 
 </html>
