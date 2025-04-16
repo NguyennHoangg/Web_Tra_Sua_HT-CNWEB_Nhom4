@@ -72,12 +72,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.getElementById('logout').addEventListener('click', () => {
-    // Xóa dữ liệu người dùng khỏi localStorage
-    localStorage.removeItem('loggedInUser');
 
-    // Xóa tên người dùng khỏi giao diện
-    document.getElementById('user-name').textContent = '';
-
-    alert('Bạn đã đăng xuất!');
-});
