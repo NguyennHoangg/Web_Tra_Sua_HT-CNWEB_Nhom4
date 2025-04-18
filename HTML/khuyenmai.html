@@ -11,7 +11,74 @@
     <script src="../javascript/form.js"></script>
     <script src="../javascript/regex.js"></script>
     <script src="../javascript/userController.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <title>5FriendTea</title>
+
+    <style>
+        .banner-text {
+            position: absolute;
+
+            top: 20%;
+            left: 10%;
+            transform: none;
+
+            color: white;
+            /* Màu chữ trắng để nổi bật trên hình ảnh */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            /* Thêm bóng chữ để dễ đọc hơn */
+        }
+
+        .banner-text h1 {
+            font-size: 2rem;
+            /* Kích thước chữ lớn */
+            margin-bottom: 10px;
+        }
+
+        .banner-text p {
+            font-size: 1.2rem;
+            /* Kích thước chữ nhỏ hơn cho mô tả */
+        }
+
+        hr {
+            size: 2px;
+            border: 1.5px solid black;
+        }
+
+        .promo-card {
+            transition: transform 0.3s ease;
+        }
+
+        .promo-card:hover {
+            transform: scale(1.1);
+            z-index: 2;
+        }
+
+
+        /* Animation xuất hiện từ dưới lên */
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-up {
+            animation: slideUp 0.8s ease forwards;
+            opacity: 0;
+            /* Giúp load mượt */
+        }
+
+        .card-body h6, a{
+            color: brown;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,7 +115,8 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="khuyenmai.html" class="nav-link" style="text-decoration: underline;">Tin tức và ưu đãi</a>
+                        <a href="khuyenmai.html" class="nav-link" style="text-decoration: underline;">Tin tức và ưu
+                            đãi</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -56,7 +124,8 @@
                             data-bs-toggle="dropdown">Thành Viên</a>
                         <ul class="dropdown-menu">
                             <li><a href="chinhsachthanhvien.html" class="dropdown-item">Chính sách thành viên</a></li>
-                            <li><a href="chinhsachbaomat.html" class="dropdown-item">Chính sách bảo mật thông tin</a></li>
+                            <li><a href="chinhsachbaomat.html" class="dropdown-item">Chính sách bảo mật thông tin</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -74,7 +143,7 @@
                             <span id="user-name" class="ms-2"></span>
                         </a>
                     </li>
-                    
+
                     <li class="nav-item" style="padding-bottom: 10px; position: relative;">
                         <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#cartModal">
                             <i class="bi bi-cart fs-5"></i>
@@ -91,7 +160,8 @@
                 <i class="bi-search d-flex justify-content-center fs-2 text-white"></i>
             </button>
             <div id="search-field" class="search-field hidden" style="background-color: rgb(164, 8, 8); border: none;">
-                <input style="background-color: rgb(164, 8, 8); border: none; border-radius: 0px;" type="text" placeholder="Tìm kiếm..." class="form-control" >
+                <input style="background-color: rgb(164, 8, 8); border: none; border-radius: 0px;" type="text"
+                    placeholder="Tìm kiếm..." class="form-control">
             </div>
         </div>
     </nav>
@@ -137,7 +207,8 @@
                     <!-- Form Đăng Ký -->
                     <div class="tab-pane fade" id="registerForm">
                         <form>
-                            <p class="mt-3 text-muted">Vui lòng đăng kí để hưởng nhiều ưu đãi độc quyền từ 5FRIENDSTEA</p>
+                            <p class="mt-3 text-muted">Vui lòng đăng kí để hưởng nhiều ưu đãi độc quyền từ 5FRIENDSTEA
+                            </p>
                             <div class="mb-3">
                                 <input type="text" class="form-control rounded-2" placeholder="Họ và tên" required>
                             </div>
@@ -172,25 +243,28 @@
                     <h5 class="modal-title" id="contactModalLabel">Liên Hệ Với Chúng Tôi</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-    
+
                 <!-- Body -->
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
                             <label for="name" class="form-label">Họ và Tên</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nhập họ tên của bạn" required>
+                            <input type="text" class="form-control" id="name" placeholder="Nhập họ tên của bạn"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" required>
+                            <input type="email" class="form-control" id="email" placeholder="Nhập email của bạn"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Nội dung thắc mắc</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="Nhập nội dung" required></textarea>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Nhập nội dung"
+                                required></textarea>
                         </div>
                     </form>
                 </div>
-    
+
                 <!-- Footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
@@ -224,144 +298,143 @@
         </div>
     </div>
 
-
-    <div class="container">
-        <div class="row align-items-center gx-5 mt-5">
-            <div class="col-md-6 text-center order-md-1 order-2">
-                <img src="../IMAGE/poster_giamgia_donxuan.jpg" class="img-fluid rounded shadow"
-                    alt="Khuyến mãi đặc biệt">
-            </div>
-            <div class="col-md-6 order-md-2 order-1">
-                <h3 class="text-uppercase fw-bold">&#128013;Đón Xuân Ất Tỵ cùng Dâu Hạnh Nhân&#127827;</h3>
-                <hr>
-                <p class="lead">&#128013;Một mùa Xuân đầy sắc đỏ may mắn, mang ý nghĩa Hạnh Phúc trong dịp Tết Ất Tỵ
-                    2025 khi
-                    mắt series thức uống mới. Đặc biệt với topping Thạch Hạnh Nhân có hương vị đặc trưng, mềm tan, béo
-                    mịn kết hợp cùng kem sữa, mứt dâu chua ngọt. Điểm danh 2 thành viên mới của nhà dâu nha:
-                </p>
-
-                <ul>
-                    <li>&#127827;Trà Sữa Dâu Hạnh Nhân</li>
-                    <li>&#127827;Dâu Hạnh Nhân Đá Xay</li>
-                </ul>
-                <a href="#"><button class="btn btn-danger mt-5">Chi tiết</button></a>
-            </div>
+    <div class="" style="width: 100%;">
+        <img src="../IMAGE/banner-tintuc-uudai.png" class="img-fluid mt-1 " alt="">
+        <div class="banner-text position-absolute text-center">
+            <h1 class="text-uppercase fw-bold">TIN TỨC & ƯU ĐÃI</h1>
+            <p>News and Promotions from Gong Cha</p>
         </div>
-
-
-        <div class="row align-items-center mt-5 gx-5 mb-5">
-            <div class="col-md-6 order-md-1 order-2">
-                <h3 class="text-uppercase fw-bold">Chào Hè bằng Quýt Yuzu
-                </h3>
-                <hr>
-                <p class="lead">&#127958;Thời tiết nóng đến phát hỏa hãy để Gong Cha giải nhiệt cho bạn bằng bộ ba Quýt Yuzu ra
-                    mắt vào 16/04/2025 lần này! Cùng điểm qua các thức uống mới nào!
-                </p>
-                <ul>
-
-                    <li>&#127818;Trà Quýt Yuzu</li>
-
-                    <li>&#127818;Trà Sữa Quýt Yuzu</li>
-                    <li>&#127818;Trà Quýt Yakult</li>
-
-                </ul>
-                <a href="#"><button class="btn btn-danger float-end mt-5">Chi tiết</button></a>
-            </div>
-            <div class="col-md-6 text-center order-md-2 order-1">
-                <img src="../IMAGE/poster_giamgia_quytuzu.jpg" class="img-fluid rounded shadow" alt="Khuyến mãi đặc biệt">
-            </div>
-        </div>
-
-
-
-        <div class="row align-items-center gx-5 mt-5">
-            <div class="col-md-6 text-center order-md-1 order-2">
-                <img src="../IMAGE/poster_giamgia7.jpg" class="img-fluid rounded shadow" alt="Khuyến mãi đặc biệt">
-            </div>
-            <div class="col-md-6 order-md-2 order-1">
-                <h3 class="text-uppercase fw-bold">Summer Waves</h3>
-                <hr>
-                <p class="lead">&#127846;Kem ngon mát lạnh lại thêm trà&#129380;
-                    <br>
-                    &#127846;Với lớp kem tươi cộp mác Gong Cha phủ lên phần trà sữa đậm đà,
-                        thơm béo và mức giá ưu đãi hấp dẫn chắc chắn là lựa chọn số 1 cho ngày Hè của bạn rồi đấy, check
-                        ngay nào!
-                </p>
-                
-                <ul>
-                    <li>- Okinawa Latte Float: 64.000đ</li>
-                    <li>- Dolce Milk Tea Float: 60.000đ</li>
-                </ul>
-                <a href="#"><button class="btn btn-danger mt-5">Chi tiết</button></a>
-            </div>
-        </div>
-
-        <div class="row align-items-center mt-5 gx-5 mb-5">
-            <div class="col-md-6 order-md-1 order-2">
-                <h3 class="text-uppercase fw-bold">Bình Bánh Quy đã quay trở lại
-                </h3>
-                <hr>
-                <p class="lead">Giáng Sinh nhộn nhịp, tặng bình trao tay! &#127873;
-                </p>
-                <p>&#127876;Bình Bánh Quy đã trở lại với diện mạo “chú yêu tinh” cực dễ thương!
-                    <br>
-                    &#127876;Chỉ với 86.000đ, các đồng trà sẽ nhận ngay:
-                </p>
-                <ul>
-                    
-                        <li>&#127775;1 thức uống đặc biệt trong bình (Trà Sữa Trân Châu Đen, Matcha, Dâu hoặc Khoai
-                            Môn).
-                        </li>
-
-                        <li>&#127775;bộ sticker để bạn sáng tạo và trang trí bình theo cá tính riêng</li>
-                   
-                </ul>
-                <a href="#"><button class="btn btn-danger float-end mt-5">Chi tiết</button></a>
-            </div>
-            <div class="col-md-6 text-center order-md-2 order-1">
-                <img src="../IMAGE/poster_giamgia4.png" class="img-fluid rounded shadow" alt="Khuyến mãi đặc biệt">
-            </div>
-        </div>
-
-        <div class="row align-items-center gx-5 mt-5 mb-5">
-            <div class="col-md-6 text-center order-md-1 order-2">
-                <img src="../IMAGE/poster_giamgia3.jpg" class="img-fluid rounded shadow" alt="Khuyến mãi đặc biệt">
-            </div>
-            <div class="col-md-6 order-md-2 order-1">
-                <h3 class="text-uppercase fw-bold">Chào Mừng Bộ Ba Giáng Sinh 2024!</h3>
-
-                <hr>
-                <p class="lead">
-                    Chào Mừng Bộ Ba Giáng Sinh 2024!
-                </p>
-
-                <p>
-                    &#127876;Gong Cha chính thức ăn mừng mùa lễ hội với 3 thức uống mới toanh, sẵn sàng để các đồng trà
-                    đắm chìm
-                    trong không khí Giáng Sinh cực kỳ giòn tan và lung linh với các điểm nhấn cực chất! ✨
-                    <br>
-                    <br>
-                    &#127775; Crisp White Chocolate phủ quanh ly, chỉ cần bóp nhẹ là thức uống bắt đầu “rã đông” và mang
-                    đến
-                    sự ngọt ngào từ món quen
-                    <br>
-                    <br>
-                    &#127775; Matcha Nhật Bản được nâng cấp sẽ là điểm nhấn mới, giúp bạn tận hưởng trọn vẹn từng khoảnh
-                    khắc
-                    hạnh phúc trong dịp Giáng Sinh này.
-                    <br>
-                    <br>
-                    &#127775;Đừng quên lịch hẹn 24/12/2024 để trải nghiệm ngay bộ ba Giáng Sinh: Matcha Okinawa, Matcha
-                    White
-                    Choco và Strawberry White Choco
-                </p>
-
-
-                <a href="#"><button class="btn btn-danger mt-5">Chi tiết</button></a>
-            </div>
-        </div>
-
     </div>
+
+    <hr>
+
+   
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="card promo-card h-100">
+                    <img src="../IMAGE/poster_giamgia1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="card-title">Bắp ngọt lá nếp có gì hot?</h6>
+                            <a href="">CHI TIẾT></a>
+                        </div>
+                        <p class="card-text fs-6"> BẮP NGỌT ĐẬM ĐÀ – LÁ NẾP LÀNG TA  Hình ảnh nồi bắp luộc nóng hổi gợi nhớ đến món…</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card promo-card h-100">
+                    <img src="../IMAGE/poster_giamgia2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="card-title">Đón Xuân Ất Tỵ - Cầu Xài Mê Ly</h6>
+                            <a href="">CHI TIẾT></a>
+                        </div>
+                        <p class="card-text fs-6 small">ĐÓN XUÂN ẤT TỴ – “CẦU XÀI MÊ LY”! Khởi đầu năm mới với hương vị tươi mới, đầy may…</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card promo-card h-100">
+                    <img src="../IMAGE/poster_giamgia3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="card-title">Chào mừng bộ ba giáng sinh 2024 &#x1F384;</h6>
+                            <a href="">CHI TIẾT></a>
+                        </div>
+                        <p class="card-text fs-6">Chào Mừng Bộ Ba Giáng Sinh 2024 chính thức ăn mừng mùa lễ hội với 3 thức uống…</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="card promo-card h-100">
+                    <img src="../IMAGE/poster_giamgia4.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="card-title">Bình bánh quy đã quay quay trở lại</h6>
+                            <a href="">CHI TIẾT></a>
+                        </div>
+                        <p class="card-text fs-6">Miền Nam thì có hoa mai, Giáng Sinh phải có 1,2,3 bình! Bình xinh xuất hiện lung linh, Giáng Sinh…</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card promo-card h-100">
+                    <img src="../IMAGE/poster_giamgia6.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="card-title">Nhãn sen chào hè</h6>
+                            <a href="">CHI TIẾT></a>
+                        </div>
+                        <p class="card-text fs-6">Trăm hay không bằng món quen Giờ đây đã có Nhãn Sen đây rồi! Bộ ba Trà Nhãn Sen đã…</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card promo-card h-100">
+                    <img src="../IMAGE/poster_giamgia_quytuzu.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="card-title">Chào hè bằng quýt Yuzu</h6>
+                            <a href="">CHI TIẾT></a>
+                        </div>
+                        <p class="card-text fs-6">Be With You Mãi bên nhau bạn nhé! Thời tiết nóng đến phát hỏa hãy để 5FriendsTea giải</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="card promo-card h-100">
+                    <img src="../IMAGE/poster_giamgia7.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="card-title">Ra mắt Trà Sữa kết hợp với Kem</h6>
+                            <a href="">CHI TIẾT></a>
+                        </div>
+                        <p class="card-text fs-6">Kem ngon mát lạnh lại thêm trà Món mới mời bạn ghé Gong Cha! Chiều lòng Fan hâm mộ, Gong…</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card promo-card h-100">
+                    <img src="../IMAGE/poster_giamgia_topping.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="card-title">Ra mắt 4 loại topping mới</h6>
+                            <a href="">CHI TIẾT></a>
+                        </div>
+                        <p class="card-text fs-6">opping đặt 2 Miễn phí Upsize Gong Cha ra mắt 4 sản phẩm topping mới: – Trân Châu Xoài –…</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card promo-card h-100">
+                    <img src="../IMAGE/poster_cauvong.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="card-title">Đón cầu vồng cùng 5FriendsTea</h6>
+                            <a href="">CHI TIẾT></a>
+                        </div>
+                        <p class="card-text fs-6">Đại Tiệc Cầu Vồng, bạn có “join” không? Cầu Vồng sau nhiều cơn mưa tháng 6, Gong Cha rất vui…</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center mb-3">
+        <button class="btn btn-danger text-white">Xem thêm</button>
+    </div>
+
+    
 
 
 
@@ -411,6 +484,14 @@
     </div>
     <script src="../javascript/bootstrap.bundle.min.js"></script>
     <script src="../javascript/userController.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+
 
 </body>
 
