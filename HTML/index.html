@@ -23,35 +23,30 @@
             color: black;
         }
 
-        @keyframes slideFromTopLeft {
-            from {
-                transform: translate(-100%, -100%);
-                opacity: 0;
-            }
 
-            to {
-                transform: translate(0, 0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideFromTopRight {
-            from {
-                transform: translate(100%, -100%);
-                opacity: 0;
-            }
-
-            to {
-                transform: translate(0, 0);
-                opacity: 1;
-            }
-        }
 
         .image-animate {
             position: absolute;
             animation-duration: 1.5s;
             animation-timing-function: ease-out;
             opacity: 1;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -66,10 +61,10 @@
             </a>
 
             <!-- Toggle Button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <!-- Menu -->
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -298,6 +293,103 @@
     </div>
     </div>
     </div>
+
+    <div class="container mb-5" id="khuyenmai">
+        <div style="margin-top: 30px;">
+            <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="#trangchu">Trang chủ</a>
+            <span class="divider"> / </span>
+            <a class="link-offset-2 link-underline link-underline-opacity-0 text-dark" href="khuyenmai.html">Khuyến
+                mãi</a>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card promo-card">
+                        <img src="../IMAGE/poster_giamgia_donxuan.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Đón xuân Ất Tỵ</h5>
+                            <p class="card-text">Chào đón năm mới cùng 2 món mới toanh <br>
+                                cùng uống Trà sữa dâu cho cả năm đều đỏ</p>
+                            <a href="khuyenmai.html" class="btn btn-custom">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card promo-card">
+                        <img src="../IMAGE/poster_giamgia3.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Chào mừng bộ 3 Giáng Sinh</h5>
+                            <p class="card-text">Trong không khí rộn ràng của mùa lễ hội Giáng Sinh cùng đón chờ bộ 3
+                                giáng sinh ngày 24/12/2025 nào</p>
+                            <a href="khuyenmai.html" class="btn btn-custom">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card promo-card">
+                        <img src="../IMAGE/poster_giamgia4.png" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Cùng Chào Đón Mùa Lễ Hội Giáng Sinh</h5>
+                            <p class="card-text">Một mùa giáng sinh nữa lại về và bình bánh quy cũng đã quay trở lại
+                                cũng đã quay trở lại</p>
+                            <a href="khuyenmai.html" class="btn btn-custom">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center mt-3">
+                    <a href="khuyenmai.html"> <button class="btn btn-danger">Xem Thêm</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="mt-1">
+        <div class="position-relative">
+            <div class="image-container d-none d-lg-block">
+                <img id="slider-img" src="../IMAGE/poster_chinhsachthanhvien.jpg" class="custom-img img-fluid"
+                    alt="Khuyến mãi" style="object-fit: contain;">
+                <div class="overlay-text text-center">
+                    <h2  style="color: #8b0000;" class="fw-bold">Tinh túy từ lá trà tươi hảo hạng</h2>
+                    <a href="#"  style="color: #8b0000;" class="btn btn-outline-danger mt-3">Tìm hiểu thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row align-items-center">
+          <!-- Cột trái: Ảnh + chữ giữa -->
+          <div class="col-md-6 text-center">
+            <div class="image-wrapper position-relative d-inline-block">
+              <img src="../IMAGE/ly-tra_trangchu.png" alt="Trà ngon" class="img-fluid">
+              <div class="centered-text text-dark fw-bold">Bí quyết để có một ly trà hảo hạng</div>
+            </div>
+          </div>
+      
+          <!-- Cột phải: Menu + tiêu đề + mô tả + nút -->
+          <div class="col-md-6">
+            <!-- Menu danh mục -->
+            <div class="mb-3 small text-muted">
+              <span class="text-danger fw-bold border-bottom border-danger pb-1 me-3">Thức Uống Đặc Biệt Gong Cha</span>
+              <span class="me-3">Trà Nguyên Chất</span>
+              <span class="me-3">Trà Sữa</span>
+              <span class="me-3">Thức Uống Đá Xay</span>
+            </div>
+      
+            <!-- Nội dung chính -->
+            <h4 class="fw-bold text-danger">Thức Uống Đặc Biệt Gong Cha</h4>
+            <p>Dòng thức uống đặc biệt kết hợp giữa trà nguyên chất với lớp milk foam béo cùng vị mặn nhẹ đặc trưng mang đến điểm nhấn sáng tạo cho một thức uống quen thuộc.</p>
+            <a href="tra.html" class="btn btn-outline-danger mt-3">XEM THỰC ĐƠN</a>
+          </div>
+        </div>
+      </div>
+      
+
+
+
     <div id="footer" style="background-color: rgb(225, 224, 224); padding: 20px 0; color:black;">
         <div class="container">
             <div class="row ">
